@@ -1,0 +1,30 @@
+# Environments
+.venv/
+.env
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+*.egg-info/
+build/
+dist/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Temp / working files
+diagram_check/
+spec_extract.txt
+
+# Internal docs
+pitch.md
+demo_runbook.md
+pipeline_reference.md
+AUTOMATION_ROADMAP.md

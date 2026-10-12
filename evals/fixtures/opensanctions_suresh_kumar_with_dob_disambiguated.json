@@ -1,0 +1,352 @@
+{
+  "responses": {
+    "q1": {
+      "status": 200,
+      "results": [
+        {
+          "id": "in-nse-deb-acf9e8b7892a812ea6de2be78073fb5de2a0aa30",
+          "caption": "SURESH KUMAR",
+          "schema": "LegalEntity",
+          "properties": {
+            "topics": [
+              "debarment"
+            ],
+            "name": [
+              "SURESH KUMAR"
+            ],
+            "jurisdiction": [
+              "in"
+            ],
+            "taxNumber": [
+              "AMMPK4657M"
+            ]
+          },
+          "datasets": [
+            "in_nse_debarred"
+          ],
+          "referents": [],
+          "target": true,
+          "first_seen": "2024-08-03T11:11:02",
+          "last_seen": "2026-09-09T11:11:01",
+          "last_change": "2024-09-03T11:11:05",
+          "score": 1.0,
+          "explanations": {
+            "name_match": {
+              "detail": "['suresh kumar' literalMatch: 1.00, weight 1.00]",
+              "score": 1.0,
+              "query": "Suresh Kumar",
+              "candidate": "SURESH KUMAR"
+            },
+            "vessel_imo_mmsi_match": {
+              "detail": "Not a vessel",
+              "score": 0.0,
+              "query": null,
+              "candidate": null
+            },
+            "dob_year_disjoint": {
+              "detail": "No birth years provided",
+              "score": 0.0,
+              "query": null,
+              "candidate": null
+            },
+            "dob_day_disjoint": {
+              "detail": "No birth dates provided",
+              "score": 0.0,
+              "query": null,
+              "candidate": null
+            }
+          },
+          "match": true
+        },
+        {
+          "id": "in-nse-deb-eb018bf6c378ad5473bd904568fcc1a1726e2a1a",
+          "caption": "Suresh Kumar",
+          "schema": "LegalEntity",
+          "properties": {
+            "topics": [
+              "reg.warn"
+            ],
+            "name": [
+              "Suresh Kumar"
+            ],
+            "jurisdiction": [
+              "in"
+            ]
+          },
+          "datasets": [
+            "in_nse_debarred"
+          ],
+          "referents": [],
+          "target": true,
+          "first_seen": "2024-12-17T11:11:04",
+          "last_seen": "2026-09-09T11:11:01",
+          "last_change": "2024-12-17T11:11:04",
+          "score": 1.0,
+          "explanations": {
+            "name_match": {
+              "detail": "['suresh kumar' literalMatch: 1.00, weight 1.00]",
+              "score": 1.0,
+              "query": "Suresh Kumar",
+              "candidate": "Suresh Kumar"
+            },
+            "vessel_imo_mmsi_match": {
+              "detail": "Not a vessel",
+              "score": 0.0,
+              "query": null,
+              "candidate": null
+            },
+            "dob_year_disjoint": {
+              "detail": "No birth years provided",
+              "score": 0.0,
+              "query": null,
+              "candidate": null
+            },
+            "dob_day_disjoint": {
+              "detail": "No birth dates provided",
+              "score": 0.0,
+              "query": null,
+              "candidate": null
+            }
+          },
+          "match": true
+        },
+        {
+          "id": "Q131450315",
+          "caption": "Suresh Kumar",
+          "schema": "Person",
+          "properties": {
+            "topics": [
+              "role.pep",
+              "role.pol"
+            ],
+            "name": [
+              "Suresh Kumar",
+              "\u0b9a\u0bc1\u0bb0\u0bc7\u0b9a\u0bc1 \u0b95\u0bc1\u0bae\u0bbe\u0bb0\u0bcd"
+            ],
+            "citizenship": [
+              "in"
+            ],
+            "wikidataId": [
+              "Q131450315"
+            ],
+            "gender": [
+              "male"
+            ],
+            "wikipediaUrl": [
+              "https://en.wikipedia.org/wiki/Suresh_Kumar_(Himachal_politician)"
+            ],
+            "notes": [
+              "Indian Himachal politician"
+            ]
+          },
+          "datasets": [
+            "wd_categories",
+            "wikidata"
+          ],
+          "referents": [],
+          "target": true,
+          "first_seen": "2024-12-21T22:12:02",
+          "last_seen": "2026-09-09T09:36:41",
+          "last_change": "2026-06-05T14:17:26",
+          "score": 1.0,
+          "explanations": {
+            "name_match": {
+              "detail": "['suresh kumar' literalMatch: 1.00, weight 1.00]",
+              "score": 1.0,
+              "query": "Suresh Kumar",
+              "candidate": "Suresh Kumar"
+            },
+            "vessel_imo_mmsi_match": {
+              "detail": "Not a vessel",
+              "score": 0.0,
+              "query": null,
+              "candidate": null
+            },
+            "dob_year_disjoint": {
+              "detail": "No birth years provided",
+              "score": 0.0,
+              "query": null,
+              "candidate": null
+            },
+            "dob_day_disjoint": {
+              "detail": "No birth dates provided",
+              "score": 0.0,
+              "query": null,
+              "candidate": null
+            }
+          },
+          "match": true
+        },
+        {
+          "id": "NK-YqAKnrthVxhZYm8sbGRgag",
+          "caption": "SURESH V KUMAR",
+          "schema": "Person",
+          "properties": {
+            "topics": [
+              "reg.action"
+            ],
+            "country": [
+              "us"
+            ],
+            "name": [
+              "Suresh V. Kumar",
+              "SURESH V KUMAR"
+            ],
+            "idNumber": [
+              "5683972"
+            ],
+            "sourceUrl": [
+              "http://brokercheck.finra.org/Individual/Summary/5683972"
+            ]
+          },
+          "datasets": [
+            "us_finra_barred",
+            "us_finra_actions"
+          ],
+          "referents": [
+            "us-finra-68862aaee861e115a02f75fa404f51cb66cef9b5",
+            "us-finra-suresh-v-kumar"
+          ],
+          "target": true,
+          "first_seen": "2024-03-28T15:26:11",
+          "last_seen": "2026-09-03T11:11:02",
+          "last_change": "2026-04-01T12:55:34",
+          "score": 0.9090909090909091,
+          "explanations": {
+            "name_match": {
+              "detail": "['suresh'\u2248'suresh' symbolMatch [NAME:Q7645714]: 1.00, weight 1.00] ['kumar'\u2248'kumar' symbolMatch [NAME:Q477265]: 1.00, weight 1.00] ['v' extraResultPart: 0.00, weight 0.20]",
+              "score": 0.9090909090909091,
+              "query": "Suresh Kumar",
+              "candidate": "SURESH V KUMAR"
+            },
+            "vessel_imo_mmsi_match": {
+              "detail": "Not a vessel",
+              "score": 0.0,
+              "query": null,
+              "candidate": null
+            },
+            "dob_year_disjoint": {
+              "detail": "No birth years provided",
+              "score": 0.0,
+              "query": null,
+              "candidate": null
+            },
+            "dob_day_disjoint": {
+              "detail": "No birth dates provided",
+              "score": 0.0,
+              "query": null,
+              "candidate": null
+            }
+          },
+          "match": true
+        },
+        {
+          "id": "Q7645717",
+          "caption": "Suresh Ale Magar",
+          "schema": "Person",
+          "properties": {
+            "classification": [
+              "National government (current)"
+            ],
+            "political": [
+              "Communist Party of Nepal (Maoist Centre)",
+              "Nepali Communist Party"
+            ],
+            "topics": [
+              "role.pep",
+              "role.pol"
+            ],
+            "name": [
+              "\u0938\u0941\u0930\u0947\u0936 \u0915\u0941\u092e\u093e\u0930 \u0906\u0932\u0947\u092e\u0917\u0930",
+              "Suresh Ale Magar",
+              "Suresh Kumar Alemagar"
+            ],
+            "gender": [
+              "male"
+            ],
+            "citizenship": [
+              "np"
+            ],
+            "wikidataId": [
+              "Q7645717"
+            ],
+            "position": [
+              "Member of the Nepalese Constituent Assembly",
+              "Member of the Parliament of Nepal"
+            ],
+            "education": [
+              "Tribhuvan University"
+            ],
+            "notes": [
+              "Nepalese politician"
+            ],
+            "firstName": [
+              "Suresh"
+            ],
+            "wikipediaUrl": [
+              "https://en.wikipedia.org/wiki/Suresh_Ale_Magar"
+            ]
+          },
+          "datasets": [
+            "wd_categories",
+            "np_parliament",
+            "wikidata",
+            "ann_pep_positions"
+          ],
+          "referents": [
+            "np-pa-na-3338"
+          ],
+          "target": true,
+          "first_seen": "2024-09-04T09:26:39",
+          "last_seen": "2026-09-09T09:36:41",
+          "last_change": "2026-07-30T14:06:35",
+          "score": 0.9090909090909091,
+          "explanations": {
+            "name_match": {
+              "detail": "['suresh'\u2248'suresh' symbolMatch [NAME:Q7645714]: 1.00, weight 1.00] ['kumar'\u2248'kumar' symbolMatch [NAME:Q477265]: 1.00, weight 1.00] ['alemagar' extraResultPart: 0.00, weight 0.20]",
+              "score": 0.9090909090909091,
+              "query": "Suresh Kumar",
+              "candidate": "Suresh Kumar Alemagar"
+            },
+            "vessel_imo_mmsi_match": {
+              "detail": "Not a vessel",
+              "score": 0.0,
+              "query": null,
+              "candidate": null
+            },
+            "dob_year_disjoint": {
+              "detail": "No birth years provided",
+              "score": 0.0,
+              "query": null,
+              "candidate": null
+            },
+            "dob_day_disjoint": {
+              "detail": "No birth dates provided",
+              "score": 0.0,
+              "query": null,
+              "candidate": null
+            }
+          },
+          "match": true
+        }
+      ],
+      "total": {
+        "value": 23,
+        "relation": "eq"
+      },
+      "query": {
+        "id": null,
+        "schema": "Person",
+        "properties": {
+          "name": [
+            "Suresh Kumar"
+          ],
+          "birthDate": [
+            "1988-06-15"
+          ]
+        }
+      }
+    }
+  },
+  "limit": 5
+}

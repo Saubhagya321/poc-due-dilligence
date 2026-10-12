@@ -1,0 +1,143 @@
+[
+  {
+    "demo_group": "Clean baseline (expect green / proceed)",
+    "vendor_id": "demo-micron-india",
+    "name": "Micron Technology Operations India LLP",
+    "pan": "ABJFM2468E",
+    "entity_type": "llp",
+    "contract_value": 50000000,
+    "has_physical_premises": true
+  },
+  {
+    "demo_group": "Clean baseline (expect green / proceed)",
+    "vendor_id": "demo-tcs",
+    "name": "Tata Consultancy Services Limited",
+    "pan": "AAACR4849R",
+    "entity_type": "public_limited",
+    "contract_value": 100000000,
+    "has_physical_premises": true
+  },
+  {
+    "demo_group": "Clean baseline (expect green / proceed)",
+    "vendor_id": "demo-infosys",
+    "name": "Infosys Limited",
+    "pan": "AAACI4798L",
+    "entity_type": "public_limited",
+    "contract_value": 100000000,
+    "has_physical_premises": true
+  },
+  {
+    "demo_group": "Clean baseline (expect green / proceed)",
+    "vendor_id": "demo-hul",
+    "name": "Hindustan Unilever Limited",
+    "pan": "AAACH1004N",
+    "entity_type": "public_limited",
+    "contract_value": 100000000,
+    "has_physical_premises": true
+  },
+  {
+    "demo_group": "Adverse-media amber (expect proceed-with-safeguards)",
+    "vendor_id": "demo-reliance",
+    "name": "Reliance Industries Limited",
+    "pan": "AAACR5055K",
+    "entity_type": "public_limited",
+    "contract_value": 100000000,
+    "has_physical_premises": true
+  },
+  {
+    "demo_group": "Adverse-media amber (expect proceed-with-safeguards)",
+    "vendor_id": "demo-adani",
+    "name": "Adani Enterprises Limited",
+    "pan": "AABCA2804L",
+    "entity_type": "public_limited",
+    "contract_value": 100000000,
+    "has_physical_premises": true
+  },
+  {
+    "demo_group": "Adverse-media amber (expect proceed-with-safeguards)",
+    "vendor_id": "demo-vedanta",
+    "name": "Vedanta Limited",
+    "pan": "AACCS7101B",
+    "entity_type": "public_limited",
+    "contract_value": 100000000,
+    "has_physical_premises": true
+  },
+  {
+    "demo_group": "Distressed / NCLT (expect amber with litigation+media)",
+    "vendor_id": "demo-byjus",
+    "name": "Think and Learn Private Limited",
+    "pan": "AAECT0931A",
+    "entity_type": "private_limited",
+    "contract_value": 25000000,
+    "has_physical_premises": true
+  },
+  {
+    "demo_group": "Distressed / NCLT (expect amber with litigation+media)",
+    "vendor_id": "demo-future-retail",
+    "name": "Future Retail Limited",
+    "pan": "AADCB1093N",
+    "entity_type": "public_limited",
+    "contract_value": 50000000,
+    "has_physical_premises": true
+  },
+  {
+    "demo_group": "Fugitive promoter (expect sanctions RED / decline)",
+    "vendor_id": "demo-gitanjali",
+    "name": "Gitanjali Gems Limited",
+    "pan": "AAACG1642F",
+    "entity_type": "public_limited",
+    "contract_value": 10000000,
+    "has_physical_premises": true,
+    "key_persons": ["Mehul Choksi"]
+  },
+  {
+    "demo_group": "Fugitive promoter (expect sanctions RED / decline)",
+    "vendor_id": "demo-firestar",
+    "name": "Firestar Diamond International Private Limited",
+    "pan": "AABCJ7268H",
+    "entity_type": "private_limited",
+    "contract_value": 10000000,
+    "has_physical_premises": true,
+    "key_persons": ["Nirav Modi"]
+  },
+  {
+    "demo_group": "Fugitive promoter (expect sanctions RED / decline)",
+    "vendor_id": "demo-kingfisher",
+    "name": "Kingfisher Airlines Limited",
+    "pan": "AAACD5301J",
+    "entity_type": "public_limited",
+    "contract_value": 10000000,
+    "has_physical_premises": false,
+    "key_persons": ["Vijay Mallya"]
+  },
+  {
+    "demo_group": "SFIO/NCLT fraud (expect amber-heavy, score low)",
+    "vendor_id": "demo-ilfs",
+    "name": "IL&FS Financial Services Limited",
+    "pan": "AAACI4805L",
+    "entity_type": "public_limited",
+    "contract_value": 25000000,
+    "has_physical_premises": true,
+    "key_persons": ["Hari Sankaran", "Ravi Parthasarathy"]
+  },
+  {
+    "demo_group": "SFIO/NCLT fraud (expect amber-heavy, score low)",
+    "vendor_id": "demo-dhfl",
+    "name": "Dewan Housing Finance Corporation Limited",
+    "pan": "AAACD1977A",
+    "entity_type": "public_limited",
+    "contract_value": 25000000,
+    "has_physical_premises": true,
+    "key_persons": ["Kapil Wadhawan", "Dheeraj Wadhawan"]
+  },
+  {
+    "demo_group": "SFIO/NCLT fraud (expect amber-heavy, score low)",
+    "vendor_id": "demo-yesbank",
+    "name": "Yes Bank Limited",
+    "pan": "AAACY2068D",
+    "entity_type": "public_limited",
+    "contract_value": 50000000,
+    "has_physical_premises": true,
+    "key_persons": ["Rana Kapoor"]
+  }
+]

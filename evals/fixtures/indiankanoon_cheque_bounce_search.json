@@ -1,0 +1,444 @@
+{
+  "categories": [
+    [
+      "Filter by AI Tags",
+      [
+        {
+          "value": "cheque-dishonour",
+          "formInput": "cheque%20bounce%20NI%20Act%20138+tag:cheque-dishonour"
+        },
+        {
+          "value": "presumption-in-favour-of-cheque-holder, benefit-of-doubt-to-cheque-holder",
+          "formInput": "cheque%20bounce%20NI%20Act%20138+tag:presumption-in-favour-of-cheque-holder, benefit-of-doubt-to-cheque-holder"
+        },
+        {
+          "value": "negotiable-instruments",
+          "formInput": "cheque%20bounce%20NI%20Act%20138+tag:negotiable-instruments"
+        },
+        {
+          "value": "presumptions-for-negotiable-instruments",
+          "formInput": "cheque%20bounce%20NI%20Act%20138+tag:presumptions-for-negotiable-instruments"
+        },
+        {
+          "value": "examine-accused",
+          "formInput": "cheque%20bounce%20NI%20Act%20138+tag:examine-accused"
+        },
+        {
+          "value": "meaning-of-service-by-post",
+          "formInput": "cheque%20bounce%20NI%20Act%20138+tag:meaning-of-service-by-post"
+        },
+        {
+          "value": "criminal-procedure-code",
+          "formInput": "cheque%20bounce%20NI%20Act%20138+tag:criminal-procedure-code"
+        },
+        {
+          "value": "burden-of-proof-as-to-any-particular-fact",
+          "formInput": "cheque%20bounce%20NI%20Act%20138+tag:burden-of-proof-as-to-any-particular-fact"
+        },
+        {
+          "value": "negotiable-instrument-drawn-for-consideration",
+          "formInput": "cheque%20bounce%20NI%20Act%20138+tag:negotiable-instrument-drawn-for-consideration"
+        },
+        {
+          "value": "power-high-court-for-quashing",
+          "formInput": "cheque%20bounce%20NI%20Act%20138+tag:power-high-court-for-quashing"
+        }
+      ]
+    ],
+    [
+      "Related Queries",
+      [
+        {
+          "value": "138 ni act",
+          "formInput": "138%20ni%20act"
+        },
+        {
+          "value": "section 138 ni act",
+          "formInput": "section%20138%20ni%20act"
+        },
+        {
+          "value": "138 NI Act: complainant died: legal heir on record: hearsay evidence",
+          "formInput": "138%20NI%20Act%3A%20complainant%20died%3A%20legal%20heir%20on%20record%3A%20hearsay%20evidence"
+        },
+        {
+          "value": "legally enforceable debts",
+          "formInput": "legally%20enforceable%20debts"
+        },
+        {
+          "value": "\"legally enforceable debt\"",
+          "formInput": "%22legally%20enforceable%20debt%22"
+        },
+        {
+          "value": "presumption under section 139",
+          "formInput": "presumption%20under%20section%20139"
+        },
+        {
+          "value": "legally enforceable",
+          "formInput": "legally%20enforceable"
+        },
+        {
+          "value": "amount of cheque more than",
+          "formInput": "amount%20of%20cheque%20more%20than"
+        },
+        {
+          "value": "no debt liability",
+          "formInput": "no%20debt%20liability"
+        },
+        {
+          "value": "enforcable debt",
+          "formInput": "enforcable%20debt"
+        }
+      ]
+    ],
+    [
+      "Document Types",
+      [
+        {
+          "value": "All",
+          "formInput": "cheque%20bounce%20NI%20Act%20138",
+          "selected": true
+        },
+        {
+          "value": "Laws",
+          "formInput": "cheque%20bounce%20NI%20Act%20138+doctypes:laws"
+        },
+        {
+          "value": "Judgments",
+          "formInput": "cheque%20bounce%20NI%20Act%20138+doctypes:judgments"
+        },
+        {
+          "value": "Tribunals",
+          "formInput": "cheque%20bounce%20NI%20Act%20138+doctypes:tribunals"
+        },
+        {
+          "value": "Highcourts & Supremecourt",
+          "formInput": "cheque%20bounce%20NI%20Act%20138+doctypes:supremecourt,scorders,highcourts"
+        }
+      ]
+    ],
+    [
+      "Courts and Laws",
+      [
+        {
+          "value": "Delhi District Court",
+          "formInput": "cheque%20bounce%20NI%20Act%20138+doctypes:delhidc",
+          "selected": false
+        },
+        {
+          "value": "Bangalore District Court",
+          "formInput": "cheque%20bounce%20NI%20Act%20138+doctypes:bangaloredc",
+          "selected": false
+        },
+        {
+          "value": "Delhi High Court",
+          "formInput": "cheque%20bounce%20NI%20Act%20138+doctypes:delhi",
+          "selected": false
+        },
+        {
+          "value": "Bombay High Court",
+          "formInput": "cheque%20bounce%20NI%20Act%20138+doctypes:bombay",
+          "selected": false
+        },
+        {
+          "value": "Karnataka High Court",
+          "formInput": "cheque%20bounce%20NI%20Act%20138+doctypes:karnataka",
+          "selected": false
+        },
+        {
+          "value": "Madras High Court",
+          "formInput": "cheque%20bounce%20NI%20Act%20138+doctypes:chennai",
+          "selected": false
+        },
+        {
+          "value": "Himachal Pradesh High Court",
+          "formInput": "cheque%20bounce%20NI%20Act%20138+doctypes:himachal_pradesh",
+          "selected": false
+        },
+        {
+          "value": "Calcutta High Court (Appellete Side)",
+          "formInput": "cheque%20bounce%20NI%20Act%20138+doctypes:kolkata_app",
+          "selected": false
+        },
+        {
+          "value": "Supreme Court of India",
+          "formInput": "cheque%20bounce%20NI%20Act%20138+doctypes:supremecourt",
+          "selected": false
+        },
+        {
+          "value": "Gujarat High Court",
+          "formInput": "cheque%20bounce%20NI%20Act%20138+doctypes:gujarat",
+          "selected": false
+        }
+      ]
+    ],
+    [
+      "Authors",
+      [
+        {
+          "value": "N J Jamadar",
+          "formInput": "cheque%20bounce%20NI%20Act%20138+authorid:n-j-jamadar"
+        },
+        {
+          "value": "Ashutosh Kumar",
+          "formInput": "cheque%20bounce%20NI%20Act%20138+authorid:ashutosh-kumar"
+        },
+        {
+          "value": "Kempaiah Somashekar",
+          "formInput": "cheque%20bounce%20NI%20Act%20138+authorid:k-somashekar"
+        },
+        {
+          "value": "Sandeep Sharma",
+          "formInput": "cheque%20bounce%20NI%20Act%20138+authorid:s-sharma"
+        },
+        {
+          "value": "Gurijala Radha Rani",
+          "formInput": "cheque%20bounce%20NI%20Act%20138+authorid:g-r-rani"
+        }
+      ]
+    ],
+    [
+      "Bench",
+      [
+        {
+          "value": "N J Jamadar",
+          "formInput": "cheque%20bounce%20NI%20Act%20138+benchid:n-j-jamadar"
+        },
+        {
+          "value": "Ashutosh Kumar",
+          "formInput": "cheque%20bounce%20NI%20Act%20138+benchid:ashutosh-kumar"
+        },
+        {
+          "value": "Virender Singh",
+          "formInput": "cheque%20bounce%20NI%20Act%20138+benchid:virender-singh-himachal_pradesh"
+        },
+        {
+          "value": "Kempaiah Somashekar",
+          "formInput": "cheque%20bounce%20NI%20Act%20138+benchid:k-somashekar"
+        },
+        {
+          "value": "Sandeep Sharma",
+          "formInput": "cheque%20bounce%20NI%20Act%20138+benchid:s-sharma"
+        },
+        {
+          "value": "Gurijala Radha Rani",
+          "formInput": "cheque%20bounce%20NI%20Act%20138+benchid:g-r-rani"
+        },
+        {
+          "value": "Ranjana Prakash Desai",
+          "formInput": "cheque%20bounce%20NI%20Act%20138+benchid:r-p-desai"
+        },
+        {
+          "value": "Navin Chawla",
+          "formInput": "cheque%20bounce%20NI%20Act%20138+benchid:n-chawla"
+        },
+        {
+          "value": "Neena Bansal Krishna",
+          "formInput": "cheque%20bounce%20NI%20Act%20138+benchid:n-b-krishna"
+        },
+        {
+          "value": "B Pugalendhi",
+          "formInput": "cheque%20bounce%20NI%20Act%20138+benchid:b-pugalendhi"
+        }
+      ]
+    ],
+    [
+      "Years",
+      [
+        {
+          "value": "2024",
+          "formInput": "cheque%20bounce%20NI%20Act%20138+year:2024"
+        },
+        {
+          "value": "2023",
+          "formInput": "cheque%20bounce%20NI%20Act%20138+year:2023"
+        },
+        {
+          "value": "2026",
+          "formInput": "cheque%20bounce%20NI%20Act%20138+year:2026"
+        },
+        {
+          "value": "2022",
+          "formInput": "cheque%20bounce%20NI%20Act%20138+year:2022"
+        },
+        {
+          "value": "2025",
+          "formInput": "cheque%20bounce%20NI%20Act%20138+year:2025"
+        },
+        {
+          "value": "2021",
+          "formInput": "cheque%20bounce%20NI%20Act%20138+year:2021"
+        },
+        {
+          "value": "2018",
+          "formInput": "cheque%20bounce%20NI%20Act%20138+year:2018"
+        },
+        {
+          "value": "2020",
+          "formInput": "cheque%20bounce%20NI%20Act%20138+year:2020"
+        },
+        {
+          "value": "2019",
+          "formInput": "cheque%20bounce%20NI%20Act%20138+year:2019"
+        },
+        {
+          "value": "2015",
+          "formInput": "cheque%20bounce%20NI%20Act%20138+year:2015"
+        }
+      ]
+    ]
+  ],
+  "docs": [
+    {
+      "tid": 87659573,
+      "catids": null,
+      "doctype": 10001,
+      "publishdate": "2024-04-15",
+      "authorid": null,
+      "bench": null,
+      "title": "Y Krishnamurthy vs Suresh.S on 15 April, 2024",
+      "numcites": 16,
+      "numcitedby": 0,
+      "headline": "signature of accused No.1, Ex.P3 is the\n\noriginal <b>cheque</b> bearing No.159128 ... that accused has committed\n\nan offence punishable u/Sec <b>138</b> <b>NI</b> <b>act</b> by issuing <b>bounced</b>\n\n<b>cheque</b>, hence accused is liable to be convict",
+      "docsize": 46264,
+      "fragment": true,
+      "docsource": "Bangalore District Court"
+    },
+    {
+      "tid": 196486668,
+      "catids": null,
+      "doctype": 10001,
+      "publishdate": "2024-04-15",
+      "authorid": null,
+      "bench": null,
+      "title": "N Anitha Vasu vs G Srinivasa on 15 April, 2024",
+      "numcites": 15,
+      "numcitedby": 0,
+      "headline": "hand loan. The\n\naccused in order to discharge his liability, he issued <b>cheque</b>\n\nbearing     Nos.615797    for    Rs.3,00,000/-.,    in   favour   of\n\ncomplainant ... that\n\naccused has committed an offence punishable u/Sec <b>138</b> <b>NI</b>\n\n<b>act</b> by issuing <b>bounced</b> <b>cheque</b>, hence accused is liable to\n\nbe convict",
+      "docsize": 33809,
+      "fragment": true,
+      "docsource": "Bangalore District Court"
+    },
+    {
+      "tid": 112287207,
+      "catids": null,
+      "doctype": 10001,
+      "publishdate": "2024-02-19",
+      "authorid": null,
+      "bench": null,
+      "title": "Chandrashekar .R vs C Santhosh on 19 February, 2024",
+      "numcites": 18,
+      "numcitedby": 0,
+      "headline": "<b>cheque</b> amount within the statutory\n           period and thereby committed an offence\n           punishable under  Section <b>138</b>  of N.I.<b>Act</b>?\n\n\n            2. What order?\n9.   My answer ... that accused has committed an offence\n\npunishable u/Sec <b>138</b> <b>NI</b> <b>act</b> by issuing <b>bounced</b> <b>cheque</b>, hence\n\naccused is liable to be convict",
+      "docsize": 45185,
+      "fragment": true,
+      "docsource": "Bangalore District Court"
+    },
+    {
+      "tid": 159426623,
+      "catids": null,
+      "doctype": 10001,
+      "publishdate": "2024-04-22",
+      "authorid": null,
+      "bench": null,
+      "title": "N Anitha Vasu vs G Srinivasa on 22 April, 2024",
+      "numcites": 15,
+      "numcitedby": 0,
+      "headline": "hand loan. The\n\naccused in order to discharge his liability, he issued <b>cheque</b>\n\nbearing     Nos.615797    for    Rs.3,00,000/-.,    in   favour   of\n\ncomplainant ... that\n\naccused has committed an offence punishable u/Sec <b>138</b> <b>NI</b>\n\n<b>act</b> by issuing <b>bounced</b> <b>cheque</b>, hence accused is liable to\n\nbe convict",
+      "docsize": 33405,
+      "fragment": true,
+      "docsource": "Bangalore District Court"
+    },
+    {
+      "tid": 186065267,
+      "catids": null,
+      "doctype": 10001,
+      "publishdate": "2024-07-02",
+      "authorid": null,
+      "bench": null,
+      "title": "Apex Infra vs Anjaneya Swamy Enterprises on 2 July, 2024",
+      "numcites": 13,
+      "numcitedby": 0,
+      "headline": "original cheques bearing No.10032952 for Rs.20,00,000/- and\n\n<b>Cheque</b> bearing serial numbers ... that\n\naccused has committed an offence punishable u/Sec <b>138</b> <b>NI</b>\n\n<b>act</b> by issuing <b>bounced</b> <b>cheque</b>, hence accused is liable to be\n\nconvict",
+      "docsize": 43192,
+      "fragment": true,
+      "docsource": "Bangalore District Court"
+    },
+    {
+      "tid": 187868431,
+      "catids": null,
+      "doctype": 10001,
+      "publishdate": "2024-03-22",
+      "authorid": null,
+      "bench": null,
+      "title": "Pushpa vs R.K. Nanje Gowda on 22 March, 2024",
+      "numcites": 10,
+      "numcitedby": 0,
+      "headline": "filed the complaint for the alleged offence punishable U/sec\n\n<b>138</b>  <b>NI</b> <b>Act</b> .\n\n10.   At the time of argument the learned counsel for\n\ncomplainant ... accused has committed an offence punishable under\n\n Sec.<b>138</b>  of <b>NI</b> <b>Act</b> by issuing <b>bounced</b> <b>cheque</b>, hence,\n\naccused be punished under  Sec.<b>138</b>  of <b>NI</b>",
+      "docsize": 37945,
+      "fragment": true,
+      "docsource": "Bangalore District Court"
+    },
+    {
+      "tid": 74150227,
+      "catids": null,
+      "doctype": 10001,
+      "publishdate": "2024-02-28",
+      "authorid": null,
+      "bench": null,
+      "title": "Muthuraju vs B.P.Sridhar on 28 February, 2024",
+      "numcites": 13,
+      "numcitedby": 0,
+      "headline": "<b>cheque</b> amount within the statutory\n         period and thereby committed an offence\n         punishable under  Section <b>138</b>  of N.I.<b>Act</b>?\n\n\n          2. What order?\n9. My answer ... that accused has committed an offence\n\npunishable u/Sec <b>138</b> <b>NI</b> <b>act</b> by issuing <b>bounced</b> <b>cheque</b>,\n\nhence accused is liable to be convict",
+      "docsize": 41794,
+      "fragment": true,
+      "docsource": "Bangalore District Court"
+    },
+    {
+      "tid": 166438349,
+      "catids": null,
+      "doctype": 10001,
+      "publishdate": "2026-03-03",
+      "authorid": null,
+      "bench": null,
+      "title": "M N Krishnamurthy vs Mohan Kumar M on 3 March, 2026",
+      "numcites": 11,
+      "numcitedby": 0,
+      "headline": "Anand\nKumar. Ex.P2 is the original <b>cheque</b>, Ex.P2(a) is the signature of\naccused, Ex.P3 is the bank memo ... that accused has committed an offence\npunishable u/Sec <b>138</b> <b>NI</b> <b>act</b> by issuing <b>bounced</b> <b>cheque</b>, thus\naccused is liable to be convict",
+      "docsize": 44191,
+      "fragment": true,
+      "docsource": "Bangalore District Court"
+    },
+    {
+      "tid": 193062520,
+      "catids": null,
+      "doctype": 10001,
+      "publishdate": "2024-03-02",
+      "authorid": null,
+      "bench": null,
+      "title": "A.N. Manjunath vs Somanna on 2 March, 2024",
+      "numcites": 13,
+      "numcitedby": 0,
+      "headline": "<b>cheque</b>\n           amount within the statutory period and\n           thereby    committed     an     offence\n           punishable under  Section <b>138</b>  of\n           N.I.<b>Act</b>?\n\n            2. What order?\n\n     10.    My answer ... that accused\nhas committed an offence punishable u/Sec <b>138</b> <b>NI</b> <b>act</b>\nby issuing <b>bounced</b> <b>cheque</b>, hence accused is liable to\nbe convict",
+      "docsize": 39018,
+      "fragment": true,
+      "docsource": "Bangalore District Court"
+    },
+    {
+      "tid": 157655942,
+      "catids": null,
+      "doctype": 10001,
+      "publishdate": "2024-01-02",
+      "authorid": null,
+      "bench": null,
+      "title": "E. Mohan Rao vs Dhagla Ram on 2 January, 2024",
+      "numcites": 11,
+      "numcitedby": 0,
+      "headline": "<b>cheque</b> amount within the statutory period and\n   thereby committed an offence punishable under\n    Section <b>138</b>  of N.I.<b>Act</b>?\n\n\n    2. What order?\n\n\n     9.   My answer ... that\n\naccused has committed an offence punishable u/Sec\n\n<b>138</b> <b>NI</b> <b>act</b> by issuing <b>bounced</b> <b>cheque</b>, hence convict\n\nthe accused for the offence punishable",
+      "docsize": 41253,
+      "fragment": true,
+      "docsource": "Bangalore District Court"
+    }
+  ],
+  "found": "1 - 10 of 6626",
+  "encodedformInput": "cheque%20bounce%20NI%20Act%20138"
+}

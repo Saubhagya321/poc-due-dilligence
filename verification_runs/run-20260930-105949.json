@@ -1,0 +1,96 @@
+{
+  "run_at": "2026-09-30T10:59:35.911248",
+  "sanctions": [
+    {
+      "vendor_id": "verify-Vladimir Putin",
+      "category": "global_compliance",
+      "source_name": "OpenSanctions",
+      "source_reference": "Q7747",
+      "summary": "Matched 'Vladimir Putin' (topics: wanted, export.control, role.pep, role.pol, debarment, corp.disqual, poi, sanction) in datasets: ru_acf_bribetakers, au_dfat_sanctions, eu_journal_sanctions, us_sam_exclusions, nz_russia_sanctions, un_ga_protocol, wd_peps, gb_fcdo_sanctions, us_cia_world_leaders, be_fod_sanctions, us_ofac_sdn, wikidata, wd_curated, ch_seco_sanctions, ann_pep_positions, tw_shtc, wd_categories, ua_war_sanctions, mc_fund_freezes, ru_kremlin_persons, kp_rusi_reports, ua_nsdc_sanctions, eu_fsf, fr_tresor_gels_avoir, us_trade_csl, gb_coh_disqualified, jp_mof_sanctions, ca_dfatd_sema_sanctions.",
+      "tag": "resolved-red-flag",
+      "confidence_tier": 2,
+      "as_of_date": "2026-09-30",
+      "check_status": "success",
+      "citation_url": "https://war-sanctions.gur.gov.ua/en/executives/880"
+    },
+    {
+      "vendor_id": "verify-Nirav Modi",
+      "category": "global_compliance",
+      "source_name": "OpenSanctions",
+      "source_reference": "Q61468097",
+      "summary": "Matched 'Nirav Modi' (topics: crime, wanted) in datasets: interpol_red_notices, wikidata.",
+      "tag": "resolved-red-flag",
+      "confidence_tier": 2,
+      "as_of_date": "2026-09-30",
+      "check_status": "success",
+      "citation_url": null
+    },
+    {
+      "vendor_id": "verify-Zoho Corporation",
+      "category": "global_compliance",
+      "source_name": "OpenSanctions",
+      "source_reference": "no-match",
+      "summary": "No sanctions or PEP matches found for 'Zoho Corporation'.",
+      "tag": "resolved-clean",
+      "confidence_tier": 2,
+      "as_of_date": "2026-09-30",
+      "check_status": "success",
+      "citation_url": null
+    }
+  ],
+  "adverse_media": [
+    {
+      "vendor_id": "verify-Vladimir Putin",
+      "category": "litigation",
+      "source_name": "Tavily web search",
+      "source_reference": "https://www.rferl.org/a/putin-bribe-scandal/31867449.html",
+      "summary": "'Putin's Stamp And The $2 Million Heist' \u2014 The Communist Party card of Aleksei Leonardov, a lawyer who worked for Vladimir Putin's External Relations Committee in St. Petersburg and faced bribery allegations linked to a scam to spirit $2 milli (identity not confirmed \u2014 needs human cross-check against vendor PAN)",
+      "tag": "unresolved",
+      "confidence_tier": 3,
+      "as_of_date": "2026-09-30",
+      "check_status": "ambiguous_match",
+      "citation_url": "https://www.rferl.org/a/putin-bribe-scandal/31867449.html"
+    },
+    {
+      "vendor_id": "verify-Nirav Modi",
+      "category": "litigation",
+      "source_name": "Tavily web search",
+      "source_reference": "https://www.ndtv.com/india-news/explained-the-punjab-national-bank-scam-that-shook-banking-system-8163134",
+      "summary": "'Punjab National Bank Scam: How Mehul Choksi, Nirav Modi Siphoned Off Crores' \u2014 By February 5, the CBI had charged Nirav Modi in a multi-crore cheating case. On February 14, PNB filed another complaint with the CBI, alleging fraud involving Nirav Modi. A day later, February 15, t (identity not confirmed \u2014 needs human cross-check against vendor PAN)",
+      "tag": "unresolved",
+      "confidence_tier": 3,
+      "as_of_date": "2026-09-30",
+      "check_status": "ambiguous_match",
+      "citation_url": "https://www.ndtv.com/india-news/explained-the-punjab-national-bank-scam-that-shook-banking-system-8163134"
+    },
+    {
+      "vendor_id": "verify-Zoho Corporation",
+      "category": "litigation",
+      "source_name": "Tavily web search",
+      "source_reference": "no-relevant-hits",
+      "summary": "No credible adverse media found for 'Zoho Corporation'.",
+      "tag": "confirmed-by-absence",
+      "confidence_tier": 3,
+      "as_of_date": "2026-09-30",
+      "check_status": "success",
+      "citation_url": null
+    }
+  ],
+  "litigation": [
+    {
+      "name": "Vladimir Putin",
+      "hit_count": 0,
+      "titles": []
+    },
+    {
+      "name": "Nirav Modi",
+      "hit_count": 0,
+      "titles": []
+    },
+    {
+      "name": "Zoho Corporation",
+      "hit_count": 0,
+      "titles": []
+    }
+  ]
+}

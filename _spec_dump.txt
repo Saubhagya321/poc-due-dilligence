@@ -1,0 +1,639 @@
+Supplier Due-Diligence & Risk-Screening PoC — Architecture Spec
+Sep 29, 2026 · @Saubhagya
+Status and next steps
+This document is both the architecture spec for the PoC development partner and the live plan for this project — decisions are recorded where they're made in the sections below; open items are tracked here until resolved.
+Decided
+Both a spec and a working prototype will be delivered; the prototype covers 2–3 sample vendors on a narrower data-source set, not every regulator integration
+Global screening via OpenSanctions; India regulatory and litigation via one KYB aggregator (SignalX, or Karza + Probe42) rather than twelve separate integrations
+Entity-type routing finalized for sole proprietorship, partnership, LLP, OPC, private limited, and public limited
+A four-way exception classification (technical failure / structural gap / ambiguous finding / expected null) and a four-tier source-confidence model
+A vendor intake form to move known-upfront gaps (CIBIL, factory licence) out of the reactive ask-vendor path
+Open — needs a decision or action before this spec is complete
+Item
+Owner
+Blocks
+Contract-value threshold for paid foreign-registry lookups (ACRA, ROC Mauritius) — resolved: captured as an intake-form field instead of a fixed number; see Vendor intake form and the human-in-the-loop playbook
+Procurement / business lead
+Resolved — see the updated foreign-UBO row in the human-in-the-loop playbook
+Hindu Undivided Family (HUF) routing rules
+Whoever owns this spec
+Resolved — HUF rules now defined in Entity-type routing
+Architecture diagram doesn't yet show the vendor intake form stage
+This document's author
+Resolved — diagram now shows the intake form as its own stage
+Legal review of scraping government portals (eCourts, MCA, GST)
+Legal
+Build-vs-buy execution. Note: eCourts India's own terms and conditions carry no explicit anti-scraping clause, unlike some other jurisdictions' court portals — but this needs checking per High Court sub-portal, and separately for MCA and GST, which haven't been reviewed
+Choice of KYB aggregator, and whether it discloses its own source provenance
+Whoever owns tool procurement
+Which confidence tier India-regulatory findings get
+Next steps
+Resolve the open items above
+Update the architecture diagram to include the intake form
+Select 2–3 sample vendors for the prototype
+Begin the prototype build — orchestrator plus one specialist agent, end to end
+Problem statement and scope
+Procurement needs one decision per vendor — proceed, proceed with safeguards, or decline — made faster and more consistently than manual research allows, and backed by evidence because the output is AI-generated.
+The requirement list groups into four layers: the decision itself (risk score + recommended action); the evidence that supports it (global compliance, India regulatory, litigation, ownership and behaviour); a trust constraint that applies across both (every material finding cites its source); and post-decision actions (supplier-engagement pack, ongoing monitoring).
+This document covers the full system as it would run in production. The prototype demonstrates the same pipeline end to end on 2–3 sample vendors, using a narrower set of data sources — it proves the pattern works, not that every regulator integration is built.
+System architecture
+
+agent pipeline · 6 stages, monitoring loop
+The orchestrator routes each vendor by entity type and plans the check sequence; four specialist agents run in parallel; findings pass through an evidence store and guardrail critic that checks every claim against a source before scoring; borderline or decline cases go to a human; and the report triggers an ongoing monitoring loop back to the orchestrator, shown as the dashed line on the left.
+Architecture plan
+This section is the single reference for what's an agent (reasons with an LLM), what's a tool (a function an agent calls to fetch or verify data), and what's a human step — pulled together in one place instead of scattered across the sections above.
+
+4 specialist agents, each with its own tool
+Agents
+Agent
+Type
+Responsibility
+Calls
+Hands off to
+Orchestrator
+LLM agent
+Entity-type routing; plans which checks run
+Reads entity-routing rules and the intake form — no external tool
+The four specialist agents, in parallel
+Global compliance
+LLM agent
+Sanctions/PEP/adverse-media screening, false-positive control
+sanctions_pep_screen
+Evidence store
+India regulatory
+LLM agent
+GST/MCA/EPFO/Udyam/SEBI-NSE-BSE status
+mca_company_lookup, epfo_establishment_search (GST itself is a manual analyst check, not this agent)
+Evidence store
+Litigation
+LLM agent
+Case search; severity and pattern reasoning
+ecourts_case_search
+Evidence store
+Ownership & behaviour
+LLM agent
+UBO trace (7 stopping conditions); behavioural indicators
+mca_company_lookup, for ownership layers
+Evidence store
+Evidence + guardrail
+LLM agent (critic)
+Confirms every claim in the draft report cites a source
+Reads the evidence store — no external tool
+Scoring agent
+Scoring agent
+LLM agent + fixed rules
+Hard-override gate, then weighted scoring across the four categories
+Reads the evidence store and the analyst's category weights
+Report generator; human-in-the-loop if borderline or decline
+Tools
+Tool
+Calls
+Used by
+Retry policy
+sanctions_pep_screen(name, dob/incorporation, address)
+OpenSanctions API
+Global compliance agent
+3 attempts, timeout only; a low-confidence or tied match routes to a human, not retried
+mca_company_lookup(cin/name)
+Our own Postgres table, bulk-ingested from data.gov.in
+India regulatory agent; Ownership & behaviour agent
+None needed — no external call
+epfo_establishment_search(name, state)
+Aggregator API
+India regulatory agent
+3 attempts, timeout only; multiple ambiguous matches route to a human
+ecourts_case_search(entity_name)
+Scraper, or Indian Kanoon / an aggregator
+Litigation agent
+3 attempts, backoff, only on CAPTCHA or timeout; zero results is a valid finding, not retried
+GST status check
+No tool — a manual portal check by the analyst
+Supplements the India regulatory agent's output
+Not applicable
+Human touchpoints
+Touchpoint
+Who
+When
+Vendor intake form
+Vendor
+Start of process — CIBIL/bank NOC, factory licence, partnership deed, contract value
+GST manual check
+Analyst
+At intake and each re-screening cycle
+SFIO manual search
+Analyst
+At onboarding and each re-screening cycle
+eCourts spot-check
+Analyst
+Before a decline driven by litigation
+Human-in-the-loop gate
+Analyst
+Borderline scores, decline recommendations, ambiguous findings
+Vendor follow-up
+Vendor
+A structural gap discovered mid-process, e.g. a foreign UBO chain
+Flow, end to end
+The vendor intake form captures identifiers, entity type, self-disclosed documents, and the analyst's category weights
+The orchestrator routes: decides which checks apply for this entity type, skips the rest
+The four specialist agents run in parallel, each calling its own tool; GST is checked manually by the analyst in the same window
+Every finding lands in the evidence store, tagged resolved-clean, resolved-red-flag, vendor-declared, unresolved, or confirmed-by-absence
+The evidence and guardrail agent confirms every claim has a citation before scoring proceeds
+The scoring agent applies the hard-override gate first — an active sanctions match or an SFIO investigation forces a decline outright; everything else goes through weighted scoring
+A borderline score, or any decline, goes to a human at the HITL gate
+The report and engagement pack are generated, naming unresolved items and what's needed to close them
+Monitoring re-triggers the orchestrator on a periodic or event-driven basis
+Entity-type routing
+The orchestrator routes each vendor through a different subset of checks depending on legal structure, derived as follows for this PoC.
+Check
+Sole proprietorship
+Partnership firm
+LLP
+OPC
+Private limited
+Public limited
+MCA / CIN check
+Skip — not MCA-registered
+Skip — registers, if at all, with the state Registrar of Firms, not MCA
+Yes — LLPIN, MCA filings
+Yes — CIN, full Companies Act filings
+Yes
+Yes
+Who gets individually screened
+Proprietor only
+Every partner individually
+Designated partners (min. 2)
+Sole member + mandatory nominee
+All directors
+Directors + promoters
+UBO trace depth
+None
+None/shallow (partners are the owners, unless a partner is itself a company)
+Shallow–medium
+Shallow (one person + nominee)
+Layered
+Layered, may terminate at "widely held"
+Liability weight in risk scoring
+Unlimited — high severity
+Unlimited AND joint — highest severity (one partner's default exposes all partners)
+Limited
+Limited
+Limited
+Limited
+SEBI / NSE / BSE relevance
+Skip
+Skip
+Skip (cannot be listed)
+Skip
+Skip unless pursuing an IPO
+Check
+A vendor not yet classified into one of these types blocks the pipeline at intake — the orchestrator cannot plan a check sequence without it. Hindu Undivided Family (HUF) is governed by Hindu personal law, not the Companies Act or the Partnership Act — no MCA/CIN registration applies. The Karta (family head) manages the business and carries personal liability for it; adult coparceners' liability is generally limited to their share of joint family property. Screen the Karta and any coparcener with a management role; UBO trace is unnecessary, since the family members are the owners; SEBI/NSE/BSE checks are skipped, as with the other unlisted structures.
+Vendor intake form
+An entity-type-driven form, shown right after the vendor's type is confirmed and before the orchestrator plans the check sequence. It moves known-upfront structural gaps out of the reactive "ask vendor" path (see Exception and gap handling) and into a single intake step — reactive requests stay only for gaps discovered mid-process, such as a foreign UBO chain.
+Field
+Required for
+Why
+Bank NOC or CIBIL company report
+Every entity type
+RBI/CIBIL is structurally restricted (see Source reliability)
+Factory/trade licence copy
+Every entity type with physical premises
+No unified aggregator covers this (see Data source mapping)
+Partnership deed + every partner's PAN
+Partnership firm
+Every partner is individually screened
+Nominee details
+OPC
+The nominee becomes owner on the sole member's death or incapacity
+Self-attestation checkbox
+Every entity type
+"I confirm these documents are accurate and current" — an accountability trail if a document is later found false
+Contract value
+Every entity type
+Lets the analyst judge, case by case, whether a foreign-UBO registry lookup is worth commissioning — no fixed system threshold needed
+What the form does not ask: anything discoverable only after the automated checks run — a foreign UBO jurisdiction, an ambiguous sanctions match — stays a reactive request; the form can't ask about a gap nobody knows exists yet.
+A field left blank at submission is tagged vendor-declined, distinct from unresolved (which covers gaps the vendor was never asked about), and is named in the final report rather than folded into a generic "some information was missing."
+Data source mapping
+None of India's core registries expose an official, documented public API. Coverage below reflects what a PoC can realistically integrate against.
+Area
+Official access
+Practical route for the PoC
+Known restriction
+Global sanctions, PEP, adverse media
+No single official source
+OpenSanctions — 460+ sources, includes an India dataset
+Free for non-commercial use; paid license for commercial use
+MCA (company master, directors, UBO)
+Portal lookup only; bulk extract on data.gov.in
+Probe42, Karza (Perfios) or Tofler for live/UBO data
+Bulk open-data extract is free but stale
+GST status and filing discipline
+No public API
+Manual check on the GST portal by an analyst — free, no GSP needed for the PoC; a GSP would only matter if this is automated later
+None for manual use; onboarding/credentials only apply if automated
+eCourts litigation
+No public API; CAPTCHA-protected portal
+Scraper (e.g. Apify) or a paid provider (SignalX, Probe42)
+Coverage varies by court
+SEBI / NSE / BSE debarment
+Circulars and lists, not an API
+OpenSanctions curates NSE's debarred list; SEBI's own list and BSE's separate circulars aren't independently confirmed as covered
+—
+EPFO / ESIC establishment status
+No public API
+Aggregator APIs (Signzy, Surepass, AuthBridge)
+—
+MSME / Udyam registration
+No public API
+Verification APIs (Surepass, Gridlines, eKYCNow)
+—
+NCLT / insolvency
+No public API
+Manual/scrape; IBBI may hold more structured insolvency data — not yet verified
+Low structured coverage
+SFIO
+No public API
+Press releases and MCA prosecution records
+No structured source found
+RBI / CIBIL defaulter lists
+Restricted
+—
+Suit-filed and wilful-defaulter lists go to banks and licensed credit information companies, not to a procurement function directly
+Factory / trade licence
+No public API; fragmented across state-level Factories Act and Shop & Establishment Act systems
+Manual verification; no unified aggregator found
+Low structured coverage, varies by state
+One-stop India KYB aggregators — SignalX, Karza (Perfios), Probe42, AuthBridge, Tofler — already combine most of the rows above (SignalX cites 200+ regulators and 7,000+ courts). See Build-vs-buy below.
+Costing and non-commercial availability
+Source
+Non-commercial tier
+Published pricing
+OpenSanctions
+Free for personal/non-commercial search and bulk download (CC-BY-NC); commercial use needs a paid license
+Yes — pay-as-you-go API at €0.10/call with a 30-day free trial; bulk licenses (internal / financial services / reseller) are quoted, not published
+Indian Kanoon (case-law search, complements eCourts)
+Yes — ₹10,000/month free for verified non-commercial use, plus ₹500 free credit on signup
+Yes — ₹0.50/search, ₹0.20/document, ₹0.05/fragment
+SignalX, Karza (Perfios), Probe42, AuthBridge
+No published non-commercial tier
+No — sales-led, quote only; Probe42 is explicitly listed as "pricing not provided" on third-party comparison sites
+Signzy, Surepass, Gridlines (EPFO/ESIC/MSME point solutions)
+Sandbox/free trial for integration testing, not production use
+No — per-call pricing isn't published; testing is free, going live needs a quote
+For the PoC specifically: OpenSanctions and Indian Kanoon can realistically run on free or near-free tiers for a handful of sample vendors. Every India KYB aggregator needs an actual sales conversation before a real number exists — this can't be estimated from public information, and should be one of the first outreach calls made, not left until later.
+Aggregator outreach checklist
+None of these vendors publish pricing, so this is a direct sales conversation (their site's "Contact Sales" or "Request a demo" form), not something to estimate from public information.
+Before the call, have ready: this is a PoC, not production yet; rough expected volume (2–3 sample vendors now, an estimate of production volume later); which checks are needed (GST, MCA, EPFO, ESIC, litigation, UBO — all or a subset).
+On the call, ask:
+Is pricing volume-based or flat? What's the minimum commitment?
+Is a sandbox or trial available for the PoC phase?
+Does the API cite its own underlying source per finding — which registry, which filing date, which case number? (This decides the confidence tier from Source reliability.)
+How often is the data refreshed?
+Does it cover the full check list, or only some of it?
+Exception and gap handling
+
+4-way finding classification
+Every specialist-agent finding is classified into one of four handling paths before it reaches the evidence store, and tagged accordingly.
+Tag
+Meaning
+Trigger example
+resolved-clean
+Check completed, no adverse finding
+GST active, no red flags
+resolved-red-flag
+Check completed, adverse finding confirmed
+Confirmed sanctions match
+vendor-declared
+Structural gap — vendor supplied the answer via self-disclosure
+CIBIL status via bank NOC
+unresolved
+Structural gap or ambiguous match with no resolution yet
+Foreign UBO chain; low-confidence name match still pending review
+confirmed-by-absence
+"Not found" is itself the correct, expected answer for this entity type
+Partnership not found in MCA
+A failed check is never silently recorded as resolved-clean — the schema has no path from a technical failure directly to a clean tag.
+Build-vs-buy for the data layer
+Stitching together twelve separate regulator integrations (MCA, GST, eCourts, SEBI, NCLT, EPFO, ESIC, SFIO, RBI/CIBIL, NSE/BSE, MSME, licences) would consume most of a 3-person team's time on data plumbing, leaving little for the actual differentiator — orchestration, evidence-linking, UBO reasoning, and report generation.
+Recommendation: OpenSanctions for global sanctions/PEP/adverse media, plus one India KYB aggregator (SignalX or the Karza + Probe42 combination) for the regulatory and litigation rows in the data source table. Build in-house only where an aggregator falls short — for example a dedicated eCourts scraper, if cost at scale makes that worthwhile.
+This keeps engineering effort on the agentic layer — the orchestrator's routing logic, the exception-handling framework, evidence-linking, and scoring/report generation — which is what a procurement team cannot buy off the shelf.
+Aggregator
+What it covers
+Cites its own underlying source?
+SignalX
+200+ regulators, 7,000+ courts; financials, litigation, UBO, adverse media
+Not confirmed — ask before committing
+Karza (Perfios)
+KYB + financial/lending-focused intelligence
+Not confirmed
+Probe42
+MCA/company intelligence, ownership networks
+Not confirmed
+AuthBridge
+Entity + director verification, litigation, proprietary negative-record databases
+Not confirmed
+None of these were confirmed one way or the other during this research — that question (see Source reliability) goes to each vendor directly, before signing, not after.
+Open risks and unresolved gaps
+Gap
+Why it can't be closed now
+PoC handling
+RBI/CIBIL wilful-defaulter and suit-filed lists
+Distributed to banks and licensed credit information companies only
+Flagged "not verified — source restricted"; ask the vendor for a bank NOC or a CIBIL company report
+SFIO investigation status
+No structured, queryable source found
+Manual check against press releases/MCA prosecution records; not automated in the PoC
+Foreign-jurisdiction UBO chains
+India's registries stop at the border
+Flagged "unresolved — foreign jurisdiction"; combined with other findings rather than treated as clean
+Hindu Undivided Family (HUF) routing
+Not yet mapped in the entity-type routing table
+To be added before this spec is considered complete
+eCourts coverage completeness
+Scraper/aggregator coverage varies by court; no official completeness guarantee
+Every litigation finding carries an as-of date and source; absence of a case is never reported as confirmation of a clean record
+None of these gaps block the PoC — each has a defined state in the evidence-store schema (see Exception and gap handling) rather than being silently treated as a clean result.
+Source reliability and confidence
+A source returning data is not the same as that data being trustworthy. Every source used feeds into a four-tier confidence model, and the tier — not just the finding — is stored alongside the evidence.
+Tier
+Source type
+Confidence
+Validation rule
+1
+Official registry or licensed credit bureau, queried directly
+High
+Used as-is
+2
+Licensed aggregator that cites its own underlying source (registry name, filing date, CNR/case number)
+Medium-high
+Used as-is; the evidence store records the aggregator's cited origin, not just the aggregator's name
+3
+Aggregator or scraper with no exposed provenance (a black-box "clean"/"flagged" answer)
+Medium
+Any tier-3-only finding that would drive a decline recommendation is corroborated against a second independent source, or routed to human-in-the-loop, before being treated as confirmed
+4
+Vendor self-disclosure
+Low
+Never closes a red-flag finding; only closes a structural-gap tag, and is always labelled vendor-declared, never verified
+This is why the aggregator selection in Build-vs-buy is not just a cost decision — an aggregator that won't disclose its underlying source caps every finding it produces at tier 3, which changes how much of the report can be auto-approved versus routed to a human.
+Freshness: every stored finding carries a fetch/as-of date. Checks are re-pulled on a cadence matched to how fast that source changes — litigation and sanctions/PEP monthly or event-driven, slower-moving registrations (MCA, Udyam) quarterly — rather than being treated as permanently valid after the first pull.
+For RBI/CIBIL and SFIO specifically, there is no technical fix — the access restriction is structural, not a data quality problem. The two real options are: (a) a data-sharing or reseller agreement with a licensed credit information company, typically available only to entities with an existing lending relationship, which a pure procurement function usually doesn't have; or (b) accept these as permanently vendor-declared and say so explicitly in every report, rather than letting confidence quietly drift upward over time as the same unverified answer gets repeated across screening cycles.
+One more gap this surfaces: scraping government portals (eCourts, MCA, GST) may conflict with the portal's own terms of use. This should get a legal review before production, independent of whether the scraper works technically.
+Human-in-the-loop playbook
+Three of the five open risks share a shape — request, track against a deadline, verify, then record or escalate. The other two don't: SFIO involves no vendor at all, and eCourts completeness is a disclosed limitation, not something to resolve case by case.
+Gap
+Who acts
+Ask / action
+Cadence or deadline
+Escalation
+RBI/CIBIL defaulter status
+Procurement analyst
+Vendor supplies a bank NOC or a CIBIL company report
+5–7 business days
+No response by deadline → tagged unresolved, feeds into the safeguards decision, never silently dropped
+Foreign-jurisdiction UBO
+Analyst + vendor
+Vendor supplies the overseas parent's ownership documents; the analyst also sees the contract value captured on the intake form and decides case by case whether to commission a direct registry lookup (e.g. ACRA Singapore, ROC Mauritius)
+Deadline for vendor response; the lookup decision and its reasoning are logged every time, so a consistent threshold can be set later from real cases
+Stays unresolved even after vendor documents arrive, unless independently corroborated for a high-value case
+SFIO investigation status
+Analyst only, no vendor involved
+Search SFIO prosecution notices, MCA press releases, and news for the entity and its directors
+At onboarding, then every re-screening cycle
+Any match routes straight to human-in-the-loop as a near-automatic decline flag
+eCourts coverage completeness
+Analyst
+Nothing asked of the vendor — the report always states which courts and source were covered, as of when; for a decline driven by litigation, the analyst spot-checks 1–2 courts or a second provider before finalizing
+Per report; spot-check only before a high-stakes decision
+None — this is a disclosed caveat, not a per-case resolution
+HUF routing
+Whoever owns this spec
+Finish the entity-type research (who gets screened, which registry, liability treatment)
+Before go-live, not per vendor
+Blocks go-live until resolved
+Human intervention — agents, tools, and how they connect
+Not every box in the playbook above is a piece of software. Some of what looks like a system component is really just the analyst's own browser.
+Agent
+Tool(s) it uses
+Trigger
+What the human does
+Feeds back to
+Vendor follow-up agent
+Email/notification API; the same document-intake endpoint the intake form uses
+A structural gap discovered mid-process (e.g. a foreign UBO chain)
+Nothing automatic — the vendor uploads the requested document
+Evidence store, tagged vendor-declared
+Case ticketing agent
+An internal ticket/queue system
+An ambiguous finding, or a technical check that exhausted its retries
+Analyst opens the ticket and reviews the flagged evidence
+Evidence store, tagged by the analyst's decision
+Analyst review dashboard
+A UI showing the evidence, the specialist agent's confidence tier, and a decision control (confirm clean / confirm red flag / request more info)
+Opened from a ticket above
+This is where the analyst actually decides
+Evidence store + an audit log of who decided, when, on what evidence
+Manual search — no agent, no tool
+A browser, a document search — the analyst's own
+The SFIO check (every onboarding + re-screening cycle); an eCourts spot-check before a decline; a GST status check at intake and each re-screening cycle
+Analyst runs the search and logs "checked on [date], result: X"
+Evidence store, tagged confirmed-by-absence or the actual finding
+Document verification helper
+An OCR/document-extraction tool, to pull dates, names and amounts off an uploaded document
+Any document the vendor submits, upfront or on follow-up
+Analyst compares the extracted fields to the vendor's declaration; for a high-value contract, may call the issuing bank
+Evidence store, plus a mismatch flag if the extraction disagrees with the declaration
+Of these five, three are genuine software (the follow-up agent, the ticketing agent, the dashboard); two are just what the analyst does by hand. Building an "agent" for the manual-search row would be solving a problem that doesn't exist — it's already a five-minute human task, not a bottleneck.
+Data source access model — maintain, license, or look up
+The answer differs by row, and conflating them is how a PoC's maintenance cost gets underestimated.
+Source
+Access model
+Who maintains it
+Ongoing effort for us
+OpenSanctions
+Licensed API
+OpenSanctions maintains the aggregation
+Low — manage the API key and subscription tier, watch their uptime
+MCA, GST, EPFO/ESIC, MSME, SEBI/NSE/BSE (via an aggregator)
+Licensed aggregator API (Probe42, Karza, Signzy, Surepass, etc.)
+The aggregator maintains the underlying scraping/registry access
+Low–medium — manage the integration, apply the circuit breaker from Exception and gap handling to their outages, re-verify their coverage periodically
+eCourts, if built in-house instead of bought
+A scraper we write
+Us
+High — portal HTML and CAPTCHAs change; this needs an owner on an ongoing basis, not a one-time build
+SFIO, NCLT
+No structured source
+Nobody — genuinely manual
+A trivial search really is the correct long-term model here, not a stopgap, because it was already designed as a periodic human task rather than a system component
+RBI/CIBIL
+Restricted; no access model exists for us
+N/A
+None to maintain — the only path is a licensed credit information company partnership, which is organizational, not technical
+So: anything routed through a licensed aggregator is their maintenance burden, not ours — that's the actual argument for Build-vs-buy. A self-built eCourts scraper is the one place this project would take on real, ongoing upkeep. And for SFIO/NCLT, an ad-hoc search isn't a shortcut being taken today that needs fixing later — it's the intended, permanent design.
+Direct free access, before paying anyone
+An aggregator buys automation and scale, not the data itself — most of these sources are already free and public if a human checks them one at a time.
+Source
+Free direct access
+What "direct" means
+Enough for the PoC (2–3 vendors)?
+MCA
+Yes
+Bulk download from data.gov.in, or one-by-one lookup on the MCA portal
+Yes
+SEBI / NSE / BSE debarment
+Yes
+Public lists on each regulator's own site — easy to read directly, no aggregator needed
+Yes
+EPFO
+Yes
+One-by-one lookup on the EPFO portal
+Yes
+MSME / Udyam
+Yes
+One-by-one lookup on the Udyam portal
+Yes
+eCourts
+Yes, but CAPTCHA-protected
+Manual search on the portal, one case at a time
+Yes, for 2–3 vendors; not at scale
+SFIO / NCLT
+Yes
+Manual search of press releases and prosecution records — already the intended design
+Yes
+OpenSanctions
+Yes
+Free non-commercial tier
+Yes
+GST
+No
+No open bulk dataset exists like MCA's; the portal allows only a manual single-GSTIN check, and a GSP is needed only to automate it
+Yes — chosen approach for the PoC
+RBI/CIBIL
+No
+Genuinely restricted — manual or automated makes no difference
+No — vendor self-disclosure remains the only path
+For the prototype's 2–3 sample vendors, an aggregator subscription may not be needed at all. Everything above except GST and RBI/CIBIL can be checked by hand, for free, directly on the source. The aggregator conversation only becomes necessary once this has to run unattended, at production volume.
+Bulk ingest vs. live lookup
+Two sources both labelled "free direct access" can still mean very different engineering: one publishes a full dataset to ingest once, the other only lets you check one entity at a time.
+Source
+Bulk dataset exists?
+What this means for the system
+MCA
+Yes — data.gov.in's full company master extract
+Download periodically (e.g. monthly), load into our own database, query locally — no live portal call per vendor
+OpenSanctions
+Yes — bulk data license or on-premise API
+Same pattern: ingest and self-host, or use their hosted API — either way, no per-vendor scraping
+SEBI / NSE / BSE debarment
+Small enough to treat as bulk
+Re-fetch these few list pages on a schedule (e.g. daily) and cache locally, rather than checking live per vendor
+EPFO, Udyam
+No
+Lookup-only — no full registry is published; every vendor needs its own live query, by hand, by our own automation, or via an aggregator
+eCourts
+No
+Same — no bulk case dump exists; every vendor needs its own live search
+GST
+No, and worse
+Not just lookup-only — even a single live check can't be automated without a GSP relationship with GSTN; a human can check one GSTIN manually for free, and that's the ceiling without it
+RBI/CIBIL
+No bulk, and no lookup either
+This isn't a bulk-vs-live question at all — there is no path, manual or automated, for us to check a third party's status ourselves. Only route: vendor self-disclosure
+So: for MCA and OpenSanctions, build an ingestion pipeline once and query our own data — strictly better than treating them like the others. GST and RBI/CIBIL aren't harder versions of the same problem; they're genuinely different problems.
+Data storage and tool design
+Retry-until-correct only applies to one of the four finding categories. A tool must classify its own failure before deciding whether to retry.
+Technical failure (a timeout, a 5xx) — retry, it might succeed next time
+Structural gap ("not found" on an unregistered entity) — retrying returns the same answer every time; this is the vendor-ask path, not a retry loop
+Ambiguous finding (a low-confidence fuzzy match) — retrying the same query returns the same ambiguous result; this needs a human, not another attempt
+Storage
+Store
+Technology
+Holds
+Relational store
+PostgreSQL, with the pg_trgm extension for fuzzy name matching
+The ingested MCA bulk extract; cached SEBI/NSE/BSE lists; vendor case/workflow state; the evidence store (one row per finding, tagged); intake-form submissions and self-attestations
+Document storage
+An S3-compatible bucket
+Vendor-uploaded documents (NOC, licences, deeds); raw source snapshots (PDFs/screenshots) kept for the audit trail
+Fuzzy-match index
+Postgres pg_trgm is enough for the PoC; Elasticsearch or OpenSanctions' own "yente" service if matching against millions of sanctions/PEP entities gets too slow
+Sanctions/PEP/adverse-media name screening
+For 2–3 PoC vendors, Postgres alone can carry everything — a dedicated search cluster isn't needed yet.
+Tools
+Tool
+Calls
+Retry policy
+Never retried
+GST status check
+None — manual check on the GST portal by the analyst
+Not applicable — a manual task, not an automated call
+"GSTIN not found" — a valid answer, not a failure
+epfo_establishment_search(name, state)
+Aggregator API
+3 attempts, timeout only
+Multiple ambiguous matches — routed to human
+sanctions_pep_screen(name, dob/incorporation, address)
+OpenSanctions API
+3 attempts, timeout only
+A low-confidence or multi-way-tied match — routed to human
+mca_company_lookup(cin/name)
+Our own Postgres table (bulk-ingested, not a live call)
+None needed — there's no external call to retry
+A stale local copy is flagged, not retried
+ecourts_case_search(entity_name)
+Scraper or Indian Kanoon/aggregator
+3 attempts, backoff, only on CAPTCHA or timeout errors
+Zero results — evidence of no litigation found, not a failure
+Specialist reasoning logic
+UBO trace — stopping conditions
+The ownership specialist can't know upfront how many layers a vendor's ownership goes — at each layer it must decide whether to continue tracing or stop. Seven conditions, each tagged differently.
+Condition
+What it means
+Tag
+Natural person found, above threshold
+A person holds >10–25% (India's SBO threshold)
+resolved-clean — record as UBO
+Widely-held / publicly listed company
+Ownership is diffuse across many shareholders
+resolved-clean — no single UBO by design
+Circular ownership
+The trace revisits an entity already in its own path (A→B→C→A)
+resolved-red-flag — genuine businesses rarely do this
+Nominee/SBO gap
+The registered shareholder looks like a nominee, but no SBO filing names the real owner
+resolved-red-flag
+Foreign jurisdiction
+The chain crosses into a jurisdiction India's registries can't see
+unresolved — never treated as clean, even after vendor documents
+Data gap
+A filing is missing or the aggregator lacks it
+unresolved
+Below materiality cutoff (e.g. <5%)
+Further tracing isn't cost-effective
+confirmed-by-absence — an engineering cutoff, not a finding
+Circular ownership needs a visited-entities set per trace to detect the cycle and stop — without it, the agent loops indefinitely.
+Litigation — severity and pattern
+Raw case data (court, case number, nature, counterparty, status) isn't itself a risk signal — the read on it is:
+Nature: a code like NI Act §138 (cheque bounce) is the most common commercial litigation type in India and, alone, is a mild signal; multiple such cases are not
+Court level: District Court / Consumer Forum cases read as lower severity than High Court or NCLT cases
+Party role: the vendor as defendant is a more significant signal than the vendor as plaintiff — being sued differs from suing someone
+Pattern, recurring counterparty: several cases against the same bank or the same opposing party is a systemic signal, not a coincidence, and should be flagged as a pattern rather than listed as separate unrelated cases
+Pending vs disposed ratio: a high share of pending cases can mean slow courts or delaying tactics — worth noting, not automatically penalised, since court delays aren't the vendor's fault
+Scoring — weights as an input, not a fixed rule
+Rather than hardcoding how much each risk category (compliance, India regulatory, litigation, ownership) counts toward the final score, the analyst sets this per case: after the intake form, a slider lets them weight each category for that specific procurement decision — a one-off purchase order might deprioritise deep UBO scrutiny; a long-term strategic supplier might weight financial health and litigation heavily.
+Sensible defaults are shown, not a blank slider — most cases need no adjustment. Every deviation from the default is logged with the case, so that once enough vendors have gone through the system, there's real data to set fixed, principled weights instead of guessing them upfront — the same pattern used for the contract-value threshold.
+Two safeguards this needs, or it undermines the consistency and auditability the whole system is built around:
+Weights change the aggregate score, never the underlying evidence — a report still shows an SFIO match or a confirmed sanctions hit prominently, regardless of how it's weighted into the top-line number
+A small set of findings (an active sanctions match, an SFIO investigation) are hard overrides that force a decline recommendation regardless of weights — nothing should be able to weight these away
+Default weights (a starting point, to be recalibrated once real cases accumulate):
+Category
+Default weight
+Global compliance
+30%
+India regulatory
+25%
+Litigation
+25%
+Ownership & behavioural
+20%
+These only apply once the hard-override gate has cleared — the weighted score decides proceed vs proceed-with-safeguards for cases that didn't already trigger an automatic decline.

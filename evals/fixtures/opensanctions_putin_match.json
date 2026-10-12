@@ -1,0 +1,481 @@
+{
+  "responses": {
+    "q1": {
+      "status": 200,
+      "results": [
+        {
+          "id": "Q7747",
+          "caption": "Vladimir Putin",
+          "schema": "Person",
+          "properties": {
+            "classification": [
+              "National government (current)"
+            ],
+            "name": [
+              "\u0c35\u0c4d\u0c32\u0c3e\u0c26\u0c3f\u0c2e\u0c3f\u0c30\u0c4d \u0c2a\u0c41\u0c24\u0c3f\u0c28\u0c4d",
+              "\u0bb5\u0bbf\u0bb3\u0bbe\u0ba4\u0bbf\u0bae\u0bbf\u0bb0\u0bcd \u0baa\u0bc2\u0b9f\u0bcd\u0b9f\u0bbf\u0ba9\u0bcd",
+              "\u0423\u043b\u0430\u0434\u0437\u0456\u043c\u0435\u0440 \u041f\u0443\u0446\u0456\u043d",
+              "Vladimir Vladimirovitj PUTIN",
+              "Vladimir Vladimirovich Putin",
+              "\u126d\u120b\u12f2\u121a\u122d \u1351\u1272\u1295",
+              "Vladimir Vladimirovich PUTIN",
+              "\u09ad\u09cd\u09b2\u09be\u09a6\u09bf\u09ae\u09bf\u09b0 \u09aa\u09c1\u09a4\u09bf\u09a8",
+              "Vladimirs Putins",
+              "W\u0142adimir Putin",
+              "\u0e27\u0e25\u0e32\u0e14\u0e35\u0e21\u0e35\u0e23\u0e4c \u0e1b\u0e39\u0e15\u0e34\u0e19",
+              "Wladimir Putin",
+              "Vladimiras Putinas",
+              "\u0ea7\u0eb0\u0ea5\u0eb2\u0e94\u0eb5\u0ea1\u0eb5\u0ea3\u0ecc \u0e9b\u0eb9\u0e95\u0eb4\u0e99",
+              "Vlagyimir Putyin",
+              "\u1017\u101c\u102c\u1012\u102e\u1019\u102e\u101a\u102c \u1015\u1030\u1010\u1004\u103a",
+              "\u0648\u0644\u0627\u062f\u06cc\u0645\u06cc\u0631 \u067e\u0648\u062a\u06cc\u0646",
+              "\u05d5\u05dc\u05d3\u05d9\u05de\u05d9\u05e8 \u05e4\u05d5\u05d8\u05d9\u05df",
+              "\u0dc0\u0dca\u0dbd\u0dd0\u0da9\u0dd2\u0db8\u0dd2\u0dba\u0dbb\u0dca \u0db4\u0dd6\u0da7\u0dd2\u0db1\u0dca",
+              "Vladimir Vladimirovich POUTINE",
+              "\u10d5\u10da\u10d0\u10d3\u10d8\u10db\u10d4\u10e0 \u10de\u10e3\u10e2\u10d8\u10dc\u10d8",
+              "Wladimir Poetin",
+              "\uc6b8\ub77c\uc9c0\ubbf8\ub974 \ubfcc\ucc10",
+              "\u5f17\u62c9\u57fa\u7c73\u5c14\u00b7\u666e\u4eac",
+              "Vlad\u00edmir Putin",
+              "Vladimir Putin",
+              "\u0412\u043b\u0430\u0434\u0438\u0301\u043c\u0438\u0440 \u0412\u043b\u0430\u0434\u0438\u0301\u043c\u0438\u0440\u043e\u0432\u0438\u0447 \u041f\u0423\u0301\u0422\u0418\u041d",
+              "\u06cf\u0644\u0627\u062f\u064a\u0645\u064a\u0631 \u06a4\u0648\u062a\u064a\u0646",
+              "Wladimir Wladimirowitsch Putin",
+              "\u0412\u043b\u0430\u0434\u0438\u043c\u0438\u0440 \u0412\u043b\u0430\u0434\u0438\u043c\u0438\u0440\u043e\u0432\u0438\u0447 \u041f\u0443\u0442\u0438\u043d",
+              "Putin Vladimir Vladimirovich",
+              "\u0423\u043b\u0430\u0434\u0437\u0456\u043c\u0456\u0440 \u0423\u043b\u0430\u0434\u0437\u0456\u043c\u0456\u0440\u0430\u0432\u0456\u0447 \u041f\u0443\u0446\u0456\u043d",
+              "\u5f17\u62c9\u57fa\u7c73\u723e\u00b7\u666e\u4eac",
+              "\u0641\u0644\u0627\u062f\u064a\u0645\u064a\u0631 \u0628\u0648\u062a\u064a\u0646",
+              "Vladimir Poutine",
+              "\u0648\u0644\u0627\u062f\u06cc\u0645\u06cc\u0631 \u067e\u0648\u0679\u0646",
+              "\u041f\u0443\u0442\u0438\u043d \u0412\u043b\u0430\u0434\u0438\u043c\u0438\u0440 \u0412\u043b\u0430\u0434\u0438\u043c\u0438\u0440\u043e\u0432\u0438\u0447",
+              "\u0935\u094d\u0932\u093e\u0926\u093f\u092e\u0940\u0930 \u092a\u0941\u0924\u093f\u0928",
+              "\u092d\u094d\u0932\u093e\u0926\u093f\u092e\u093f\u0930 \u092a\u0941\u091f\u093f\u0928",
+              "\u30a6\u30e9\u30b8\u30fc\u30df\u30eb\u30fb\u30d7\u30fc\u30c1\u30f3",
+              "\u5f17\u62c9\u8fea\u7c73\u723e\u00b7\u666e\u4e01",
+              "\u0648\u0644\u0627\u062f\u0645\u064a\u0631 \u067e\u0648\u062a\u064a\u0646",
+              "\u5f17\u62c9\u57fa\u7c73\u5c14\u00b7\u666e\u6c40",
+              "\u179c\u17c9\u17d2\u179b\u17b6\u178c\u17b8\u1798\u17c0\u179a \u1796\u17bc\u1791\u17b8\u1793",
+              "Vladimir Poetin",
+              "Vladimir Vladimirovi\u010d Putin",
+              "Vladimir V. Putin",
+              "\u0412\u043b\u0430\u0434\u0438\u043c\u0438\u0440 \u041f\u0443\u0442\u0438\u043d",
+              "PUTIN, Vladimir Vladimirovich",
+              "\u054e\u056c\u0561\u0564\u056b\u0574\u056b\u0580 \u054a\u0578\u0582\u057f\u056b\u0576",
+              "\u0392\u03bb\u03b1\u03bd\u03c4\u03af\u03bc\u03b9\u03c1 \u03a0\u03bf\u03cd\u03c4\u03b9\u03bd",
+              "\u0cb5\u0ccd\u0cb2\u0cbe\u0ca6\u0cbf\u0cae\u0cbf\u0cb0\u0ccd \u0caa\u0cc1\u0ca4\u0cbf\u0ca8\u0ccd",
+              "\u041f\u0443\u0442\u0456\u043d \u0412\u043e\u043b\u043e\u0434\u0438\u043c\u0438\u0440 \u0412\u043e\u043b\u043e\u0434\u0438\u043c\u0438\u0440\u043e\u0432\u0438\u0447",
+              "Vlad\u00edm\u00edr P\u00fat\u00edn",
+              "\ube14\ub77c\ub514\ubbf8\ub974 \ud478\ud2f4"
+            ],
+            "topics": [
+              "poi",
+              "role.pep",
+              "role.pol",
+              "export.control",
+              "wanted",
+              "corp.disqual",
+              "debarment",
+              "sanction"
+            ],
+            "createdAt": [
+              "2022-02-28"
+            ],
+            "birthDate": [
+              "1952-10-07"
+            ],
+            "notes": [
+              "The Director Disqualification Sanction was imposed on 09/04/2025.",
+              "President of the Russian Federation. Corruption.",
+              "Vladimir Putin is the President of the Russian Federation. On 22 Feb 2022, he signed a decree recognising the \"independence and sovereignty\" of the non-government-controlled areas of the Donetsk and Luhansk oblasts of Ukraine, and ordered the Russian armed forces into those areas. On 24 Feb 2022, he ordered a military operation in Ukraine and Russian armed forces began an attack on Ukraine. That attack is a blatant violation of the territorial integrity, sovereignty and independence of Ukraine. Vladimir Putin is responsible for and actively supporting actions undermining the territorial integrity, sovereignty and independence of Ukraine, as well as stability and security in Ukraine.",
+              "(Date of UN designation: 2022-02-25)",
+              "Vladimir Poutine est le pr\u00e9sident de la F\u00e9d\u00e9ration de Russie. Le 22 f\u00e9vrier 2022, il a sign\u00e9 un d\u00e9cret reconnaissant l'\"ind\u00e9pendance et la souverainet\u00e9\" des zones des oblasts ukrainiens de Donetsk et de Louhansk non contr\u00f4l\u00e9es par le gouvernement, et a ordonn\u00e9 le d\u00e9ploiement des forces arm\u00e9es russes dans ces zones. Le 24 f\u00e9vrier 2022, il a ordonn\u00e9 le lancement d'une op\u00e9ration militaire en Ukraine et les forces arm\u00e9es russes ont commenc\u00e9 \u00e0 attaquer l'Ukraine. Cette attaque est une violation flagrante de l'int\u00e9grit\u00e9 territoriale, de la souverainet\u00e9 et de l'ind\u00e9pendance de l'Ukraine. Vladimir Poutine est responsable d'actions compromettant l'int\u00e9grit\u00e9 territoriale, la souverainet\u00e9 et l'ind\u00e9pendance de l'Ukraine, ou la stabilit\u00e9 ou la s\u00e9curit\u00e9 en Ukraine, et soutient activement ces actions.",
+              "Disqualified",
+              "2nd and 4th President of Russia (2000-2008, 2012-present), 7th and 11th Prime Minister of Russia (1999-2000, 2008-2012)",
+              "President of the Russian Federation",
+              "1952: Vladimir Putin was born in Leningrad on October 7, 1952.\n1975: In 1975, he graduated with a degree in law from Leningrad State University. He later earned a Ph.D. degree in economics.\n1985\u20131990: After graduation, Mr. Putin was assigned to work in the KGB. From 1985 to 1990, he worked in East Germany.\n1990: In 1990, he became assistant to the rector of Leningrad State University responsible for international affairs. His next position was an advisor to the chairman of the Leningrad City Council.\n1991, 1994: In June 1991, he became chairman of the St. Petersburg City Council\u2019s International Relations Committee and, starting with 1994, he combined this post with the position of First Deputy Chairman of the St. Petersburg City Government (First Deputy Mayor).\n1996: In August 1996, he was appointed deputy head of the President\u2019s Administrative Directorate (Property Management Directorate).\n1997: In March 1997, he became deputy head of the Executive Office of the President (Presidential Administration) and head of the Central Supervision and Inspections Directorate.\n1998: In May 1998, he was promoted to first deputy head of the Presidential Administration.\n1998, 1999: In July 1998, he was appointed director of the Federal Security Service and, as of March 1999, he combined this position with that of Secretary of the Security Council.\n1999: In August 1999, he was appointed Prime Minister.\n1999: On December 31, 1999, he became acting President.\n2000: On March 26, 2000, he was elected President of Russia and was inaugurated on May 7, 2000.\n2004: On March 14, 2004, he was elected President of Russia for the second term.\n2008: Since May 8, 2008, Vladimir Putin is a Prime Minister of Russia.\n2012: On March 4, 2012, he was elected President of Russia and inaugurated on May 7, 2012.\n2018: On March 18, 2018, he was re-elected President of Russia. Assumed office on May 7, 2018.\n2024: Won Russia\u2019s presidential election held on March 15\u201317, 2024. Assumed office on May 7, 2024.\nVladimir Putin has two daughters: Maria (1985), Katerina (1986).",
+              "Function: President of the Russian Federation",
+              "NOT SUBJECT TO TRAVEL RESTRICTIONS ACCORDING TO ARTICLE 29(1)",
+              "(also Vladimir Vladimirovich PUTIN)",
+              "(also Vladimir PUTIN)",
+              "As the President of Russia, he shapes the policy of the Russian government, which threatens the territorial integrity, sovereignty and independence of Ukraine."
+            ],
+            "programId": [
+              "US-RUSHAR",
+              "NZ-RSA2022",
+              "EU-UKR",
+              "AU-RUSSIA",
+              "SECO-UKRAINE",
+              "UA-SA1644",
+              "CA-SEMA",
+              "GB-RUS",
+              "UA-WS-EXECUTIVES"
+            ],
+            "birthPlace": [
+              "Leningrad, Russia",
+              "Saint-Petersburg, Russian Federation",
+              "Leningrad",
+              "Russia",
+              "Saint Petersburg",
+              "Leningrad (now Saint-Petersburg), RUSSIAN FEDERATION",
+              "V.F. Snegiryov Maternity Hospital No.6",
+              "\u043c. \u0421\u0430\u043d\u043a\u0442-\u041f\u0435\u0442\u0435\u0440\u0431\u0443\u0440\u0433, \u0420\u043e\u0441\u0456\u0439\u0441\u044c\u043a\u0430 \u0424\u0435\u0434\u0435\u0440\u0430\u0446\u0456\u044f",
+              "L\u00e9ningrad, aujourd'hui Saint-P\u00e9tersbourg : RUSSIE",
+              "Leningrad (now Saint-Petersburg)",
+              "L\u00e9ningrad, aujourd'hui Saint-P\u00e9tersbourg",
+              "\u30ec\u30cb\u30f3\u30b0\u30e9\u30fc\u30c9\uff08\u73fe\u30b5\u30f3\u30af\u30c8\u30da\u30c6\u30eb\u30d6\u30eb\u30af\uff09\uff08\u30ed\u30b7\u30a2\uff09",
+              "St Petersburg (then Leningrad)",
+              "Leningrad, RSFSR, USSR",
+              "Saint Petersburg, Russia"
+            ],
+            "sourceUrl": [
+              "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=uriserv%3AOJ.L_.2022.053.01.0001.01.ENG&toc=OJ%3AL%3A2022%3A053%3ATOC",
+              "https://find-and-update.company-information.service.gov.uk/disqualified-officers/natural/CoTYy6JdAkw2xBkbaHhn_4ZOVFs",
+              "https://wikispooks.com/wiki/Vladimir_Putin",
+              "https://war-sanctions.gur.gov.ua/en/sanctions/persons/880",
+              "http://en.kremlin.ru/catalog/persons/437/biography",
+              "https://gels-avoirs.dgtresor.gouv.fr/Gels/RegistreDetail?idRegistre=4271",
+              "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32014R0269",
+              "https://www.cia.gov/resources/world-leaders/foreign-governments/russia",
+              "http://en.kremlin.ru/catalog/persons/54/biography",
+              "https://sanctionssearch.ofac.treas.gov/Details.aspx?id=35096",
+              "https://war-sanctions.gur.gov.ua/en/executives/880"
+            ],
+            "position": [
+              "Supreme Commander-in-Chief of the Armed Forces of the Russian Federation (2012-)",
+              "President",
+              "voorzitter van de Veiligheidsraad van de Russische Federatie",
+              "Chairman of the Military Industrial Commission of the russian federation",
+              "pre\u0219edinte al Consiliului de Stat al Federa\u021biei Ruse (2000-2008)",
+              "recruiter",
+              "President of Russia (2000-2008)",
+              "Director of the Federal Security Service (1998-1999)",
+              "Prime Minister of Russia (1999-1999)",
+              "party leader (2008-2012)",
+              "Supreme Commander-in-Chief of the Armed Forces of the Russian Federation (1999-2000)",
+              "Prime Minister of Russia (2008-2012)",
+              "Chairman of the Commission on Military-Technical Cooperation of the russian federation with foreign countries",
+              "Supreme Commander-in-Chief of the Armed Forces of the Russian Federation (2000-2008)",
+              "Chairman of the Council of CIS Heads of State (2000-2003)",
+              "President of the Russian Federation",
+              "Acting President of Russia (1999-2000)",
+              "\u041f\u0440\u0435\u0437\u0438\u0434\u0435\u043d\u0442 \u0420\u043e\u0441\u0456\u0439\u0441\u044c\u043a\u043e\u0457 \u0424\u0435\u0434\u0435\u0440\u0430\u0446\u0456\u0457",
+              "Chairman of the Council of CIS Heads of State (2017-2017)",
+              "First Deputy Chairman of the Government of the Russian Federation (1999-1999)",
+              "chairperson (2012-)",
+              "President of Russia (2012-)",
+              "Secretary of the Security Council of Russia (1999-1999)",
+              "president of the russian federation",
+              "Chairman of the Council of CIS Heads of State (2004-2006)",
+              "chairperson",
+              "Prime Minister of Russia (1999-2000)",
+              "Supreme Commander-in-Chief of the Armed Forces of the russian federation",
+              "\u30ed\u30b7\u30a2\u9023\u90a6\u5927\u7d71\u9818",
+              "Chairman of the Council of CIS Heads of State (2024-2024)",
+              "pr\u00e9sident de la F\u00e9d\u00e9ration de Russie",
+              "pre\u0219edinte al Consiliului de Stat al Federa\u021biei Ruse (2012-)",
+              "chairman of the military-industrial commission",
+              "Chairman of the State Council of the russian federation",
+              "Permanent member of the Security Council of Russia"
+            ],
+            "country": [
+              "ru"
+            ],
+            "gender": [
+              "male"
+            ],
+            "alias": [
+              "\ube14\ub77c\ub514\ubbf8\ub974 \ube14\ub77c\ub514\ubbf8\ub85c\ube44\uce58 \ud478\ud2f4",
+              "Vlad\u00edmir Vlad\u00edmirovich Putin",
+              "Vladimir Vladimirovi\u00e7 Putin",
+              "Pre\u0219edintele Putin",
+              "\u0641\u0644\u0627\u062f\u0645\u064a\u0631 \u0628\u0648\u062a\u0646",
+              "Presiden Putin",
+              "Vladimir Vladimirovitch Poutine",
+              "\u041f\u0443\u0442\u0438\u043d \u0412. \u0412.",
+              "\u041f\u0440\u0435\u0437\u0438\u0434\u0435\u043d\u0442 \u041f\u0443\u0442\u0438\u043d",
+              "Predsjednik Putin",
+              "\u0432\u043b\u0430\u0434\u0438\u043c\u0438\u0440 \u0432\u043b\u0430\u0434\u0438\u043c\u0438\u0440\u043e\u0432\u0438\u0447 \u043f\u0443\u0442\u0438\u043d",
+              "Vladim\u00edr Vladimirovi\u010d Putin",
+              "Putyin eln\u00f6k",
+              "Vladimir Vladimirovici Putin",
+              "Wladimir Wladimirowitsj Poetin",
+              "\u0641\u0644\u0627\u062f\u064a\u0645\u064a\u0631 \u0641\u0644\u0627\u062f\u064a\u0645\u064a\u0631\u0648\u0641\u064a\u062a\u0634 \u0628\u0648\u062a\u064a\u0646",
+              "Vlad\u00edmir Vlad\u00edmirovitx Putin",
+              "\u041f\u0423\u0301\u0422\u0418\u041d \u0412\u043b\u0430\u0434\u0438\u0301\u043c\u0438\u0440 \u0412\u043b\u0430\u0434\u0438\u0301\u043c\u0438\u0440\u043e\u0432\u0438\u0447",
+              "\u0423\u043b\u0430\u0434\u0437\u0456\u043c\u0435\u0440 \u0423\u043b\u0430\u0434\u0437\u0456\u043c\u0435\u0440\u0430\u0432\u0456\u0447 \u041f\u0443\u0446\u0456\u043d",
+              "Vladimir Vladimirovich POUTINE",
+              "Presidente Vladimir Putin",
+              "Vladimir Vladimirovitj Putin",
+              "\u0e27\u0e25\u0e32\u0e14\u0e34\u0e40\u0e21\u0e35\u0e22\u0e23\u0e4c \u0e1b\u0e39\u0e15\u0e34\u0e19",
+              "Vladim\u00edr Putin",
+              "\u0412. \u0412. \u041f\u0443\u0442\u0438\u043d",
+              "\u0641\u0644\u0627\u062f\u0645\u064a\u0631 \u0628\u0648\u062a\u064a\u0646",
+              "\u041f\u0443\u0442\u0438\u043d, \u0412\u043b\u0430\u0434\u0438\u043c\u0438\u0440",
+              "Vladimir Putin",
+              "T\u1ed5ng th\u1ed1ng Nga Putin",
+              "\u0ea7\u0eb0\u0ea5\u0eb2\u0e94\u0eb4\u0ec0\u0ea1\u0e8d\u0ea3\u0ecc \u0e9b\u0eb9\u0e95\u0eb4\u0e99",
+              "\u0412\u043b\u0430\u0434\u0438\u043c\u0438\u0440 \u0412\u043b\u0430\u0434\u0438\u043c\u0438\u0440\u043e\u0432\u0438\u0447 \u041f\u0443\u0442\u0438\u043d",
+              "Presidente Putin",
+              "\u041f\u0443\u0442\u0438\u043d \u0412\u043b\u0430\u0434\u0438\u043c\u0438\u0440",
+              "\u0412\u043b\u0430\u0434\u0438 \u043c\u0438\u0440 \u0412\u043b\u0430\u0434\u0438 \u043c\u0438\u0440\u043e\u0432\u0438\u0447 \u041f\u0423 \u0422\u0418\u041d",
+              "\u0392\u03bb\u03b1\u03bd\u03c4\u03af\u03bc\u03b9\u03c1 \u0392\u03bb\u03b1\u03bd\u03c4\u03af\u03bc\u03b9\u03c1\u03bf\u03b2\u03b9\u03c4\u03c2 \u03a0\u03bf\u03cd\u03c4\u03b9\u03bd",
+              "\u0641\u0644\u0627\u062f\u064a\u0645\u064a\u0631 \u0628\u0648\u062a\u0646",
+              "\u041f\u0443\u0442\u0438\u043d, \u0412\u043b\u0430\u0434\u0438\u043c\u0438\u0440 \u0412\u043b\u0430\u0434\u0438\u043c\u0438\u0440\u043e\u0432\u0438\u0447",
+              "\u041f\u0443\u0442\u0438\u043d \u0412\u043b\u0430\u0434\u0438\u043c\u0438\u0440 \u0412\u043b\u0430\u0434\u0438\u043c\u0438\u0440\u043e\u0432\u0438\u0447",
+              "Pr\u00e4sident Putin",
+              "\u0e27\u0e25\u0e32\u0e14\u0e35\u0e21\u0e35\u0e23\u0e4c \u0e27\u0e25\u0e32\u0e14\u0e35\u0e21\u0e35\u0e42\u0e23\u0e27\u0e34\u0e0a \u0e1b\u0e39\u0e15\u0e34\u0e19",
+              "Putin Volodymyr Volodymyrovych",
+              "President Putin",
+              "W\u0142adimir W\u0142adimirowicz Putin",
+              "Cumhurba\u015fkan\u0131 Putin",
+              "\u0412\u043b\u0430\u0434\u0438\u043c\u0438\u0440 \u041f\u0443\u0442\u0438\u043d",
+              "PUTIN, Vladimir",
+              "Vlagyimir Vlagyimirovics Putyin",
+              "\u0423\u043b\u0430\u0434\u0437\u0456\u043c\u0456\u0440 \u041f\u0443\u0446\u0456\u043d"
+            ],
+            "lastName": [
+              "PUTIN",
+              "\u041f\u0423\u0301\u0422\u0418\u041d",
+              "Putin",
+              "\u041f\u0443\u0442\u0438\u043d",
+              "POUTINE"
+            ],
+            "firstName": [
+              "\u0412\u043b\u0430\u0434\u0438\u043c\u0438\u0440",
+              "Vladimir",
+              "\u0412\u043b\u0430\u0434\u0438\u0301\u043c\u0438\u0440",
+              "Vladimir Vladimirovich"
+            ],
+            "modifiedAt": [
+              "2022-03-04"
+            ],
+            "fatherName": [
+              "\u0412\u043b\u0430\u0434\u0438\u0301\u043c\u0438\u0440\u043e\u0432\u0438\u0447",
+              "Vladimirovich"
+            ],
+            "birthCountry": [
+              "ru"
+            ],
+            "address": [
+              "Novo-Ogaryevo Moscow Region Russia",
+              "Moscow",
+              "Valdai, Novgorod Region",
+              "Novo-Ogaryevo, Moscow Region",
+              "Kremlin, Moscow",
+              "Moscow, Russia",
+              "Kremlin Moscow Russia",
+              "Bocharov Ruchey Sochi Russia",
+              "Bocharov Ruchey, Sochi",
+              "Valdai Novgorod Region Russia"
+            ],
+            "nationality": [
+              "ru"
+            ],
+            "description": [
+              "Prseident of the Russian Federation, who gifted weapons to Kim Jong Un during his visit to Russia in September 2023."
+            ],
+            "middleName": [
+              "Vladimirovich",
+              "\u0412\u043b\u0430\u0434\u0438\u043c\u0438\u0440\u043e\u0432\u0438\u0447"
+            ],
+            "citizenship": [
+              "suhh",
+              "ru"
+            ],
+            "taxNumber": [
+              "711813038431"
+            ],
+            "title": [
+              "His Excellency"
+            ],
+            "addressEntity": [
+              "addr-299cf3828103aed1c5b8546b69fbe62e1aae0da9",
+              "addr-90f75394e3b7cf5a2c0d6d7f1317d995244742f5",
+              "addr-50939bdd8b6a2a9653e2cb3ad02d4f241a456895",
+              "addr-6a580aed4f28c6a4fadbd12cdda90fa720eb6e98"
+            ],
+            "uniqueEntityId": [
+              "NYRVMEKYU3U9"
+            ],
+            "wikidataId": [
+              "Q7747"
+            ],
+            "weakAlias": [
+              "\u0412\u0412\u041f",
+              "\u84b2\u5ef7",
+              "\u30f4\u30e9\u30b8\u30fc\u30df\u30eb\u30fb\u30f4\u30e9\u30b8\u30fc\u30df\u30ed\u30f4\u30a3\u30c1\u30fb\u30d7\u30fc\u30c1\u30f3",
+              "Putin",
+              "\u30d7\u30fc\u30c1\u30f3",
+              "\u666e\u6b3d",
+              "\u666e\u4e01",
+              "\u5f17\u62c9\u8fea\u7c73\u723e\u00b7\u5f17\u62c9\u8fea\u7c73\u7f85\u7dad\u5947\u00b7\u666e\u4e01",
+              "\u666e\u4eac",
+              "\u1015\u1030\u1010\u1004\u103a",
+              "\u09aa\u09c1\u09a4\u09bf\u09a8",
+              "\u5f17\u62c9\u57fa\u7c73\u723e\u00b7\u5f17\u62c9\u57fa\u7c73\u7f85\u7dad\u5947\u00b7\u666e\u4eac",
+              "\u041f\u0443\u0442\u0438\u043d",
+              "\ud478\ud2f4",
+              "\u666e\u4ead",
+              "\u0628\u0648\u062a\u064a\u0646",
+              "\u30a6\u30e9\u30b8\u30fc\u30df\u30eb\u30fb\u30a6\u30e9\u30b8\u30fc\u30df\u30ed\u30f4\u30a3\u30c1\u30fb\u30d7\u30fc\u30c1\u30f3",
+              "\u666e\u5ef7",
+              "\u0628\u0648\u062a\u0646",
+              "\u05e4\u05d5\u05d8\u05d9\u05df",
+              "Platov",
+              "\u5f17\u62c9\u57fa\u7c73\u5c14\u00b7\u5f17\u62c9\u57fa\u7c73\u7f57\u7ef4\u5947\u00b7\u666e\u4eac",
+              "\ubfcc\ucc10",
+              "\u84b2\u4ead",
+              "\u092a\u0941\u0924\u093f\u0928",
+              "\u0412.\u041f\u0443\u0442\u0438\u043d",
+              "\u5f17\u62c9\u57fa\u7c73\u723e\u00b7\u666e\u4e01",
+              "\u07d4\u07d1\u07df\u07ca\u07d5\u07d0\u07dd\u07ed",
+              "\u041f\u043b\u0430\u0442\u043e\u0432",
+              "\u30f4\u30e9\u30b8\u30fc\u30df\u30eb\u30fb\u30d7\u30fc\u30c1\u30f3",
+              "\u30f4\u30e9\u30b8\u30fc\u30df\u30eb\u30fb\u30f4\u30e9\u30b8\u30fc\u30df\u30ed\u30f4\u30a3\u30c3\u30c1\u30fb\u30d7\u30fc\u30c1\u30f3",
+              "\u0e1b\u0e39\u0e15\u0e34\u0e19",
+              "\u0e9b\u0eb9\u0e95\u0eb4\u0e99"
+            ],
+            "education": [
+              "Faculty of Law, Saint Petersburg State University (1970-1975)",
+              "Academy of Foreign Intelligence",
+              "School 281 (1968-1970)",
+              "St. Petersburg Institute of the FSB of Russia",
+              "Saint Petersburg State University",
+              "Saint Petersburg Mining University (-1997)",
+              "School 193 (1960-1968)",
+              "Academy of the Federal Security Service of the Russian Federation",
+              "Candidate of Economic Sciences (1997)"
+            ],
+            "wikipediaUrl": [
+              "https://en.wikipedia.org/wiki/Vladimir_Putin"
+            ],
+            "website": [
+              "http://putin.kremlin.ru/"
+            ],
+            "religion": [
+              "Eastern Orthodoxy"
+            ],
+            "political": [
+              "Our Home \u2013 Russia",
+              "Unity",
+              "Communist Party of the Soviet Union"
+            ],
+            "ethnicity": [
+              "Russians"
+            ]
+          },
+          "datasets": [
+            "wd_categories",
+            "us_sam_exclusions",
+            "gb_coh_disqualified",
+            "eu_fsf",
+            "tw_shtc",
+            "us_ofac_sdn",
+            "eu_journal_sanctions",
+            "jp_mof_sanctions",
+            "nz_russia_sanctions",
+            "ua_war_sanctions",
+            "wikidata",
+            "wd_curated",
+            "ch_seco_sanctions",
+            "au_dfat_sanctions",
+            "gb_fcdo_sanctions",
+            "fr_tresor_gels_avoir",
+            "ru_acf_bribetakers",
+            "un_ga_protocol",
+            "be_fod_sanctions",
+            "mc_fund_freezes",
+            "wd_peps",
+            "us_trade_csl",
+            "ca_dfatd_sema_sanctions",
+            "ua_nsdc_sanctions",
+            "kp_rusi_reports",
+            "us_cia_world_leaders",
+            "ann_pep_positions",
+            "ru_kremlin_persons"
+          ],
+          "referents": [
+            "ru-kremlin-54",
+            "gb-coh-cotyy6jdakw2xbkbahhn-4zovfs",
+            "ltfiu-sanctioned-vladimir-vladimirovich-putin",
+            "au-dfat-6678-vladimir-vladimirovich-putin",
+            "nz-ru-named-vladimir-putin",
+            "ua-nsdc-16102-putin-volodimir-volodimirovic",
+            "unprot-8b1ac4ae93075a7bfb6745d9c5e3e8fa852fcdc0",
+            "nz-ru-ind-1-vladimir-putin",
+            "acf-39b7a17a53441b22846dfafcef974c7a28204672",
+            "ch-seco-49812",
+            "usgsa-519971a04ac2cf7e4d2cb68a78bbe2a82f6de126",
+            "ofac-pr-b1579b8033bdd0d41a00af152a91304faf12a0a5",
+            "usgsa-941a678fce498dfde69459519fccb211a970b95a",
+            "tw-shtc-3c50f625574dd3f9403a9f24f0b515913953c51f",
+            "ofac-pr-f8c86694458c59b06d2c188ae313b2e4357939a0",
+            "ch-seco-8be1b1cbdf04edeca5dd8dba8f0da22dc84eb168",
+            "ca-sema-news-39d682c5def0c0741539d5757582057cf2425e12",
+            "us-cia-russia-vladimir-vladimirovich-putin-president",
+            "ofac-35096",
+            "ru-kremlin-437",
+            "gb-fcdo-rus0251",
+            "ua-ws-person-880",
+            "fr-ga-4271",
+            "eu-oj-785e5ae94dfd3ad5437a7c064b0ef99dacac41cf",
+            "lv-sanction-7e183b3d29abc48d6e71baf614c3b5132e98ee54",
+            "be-fod-b5e4ab64639c9c7f869afedda014858f5700f5a5",
+            "mc-freezes-e70429b07b7edc46d5667118dc5a59c4dd84ac1c",
+            "eu-fsf-eu-7510-16",
+            "kprusi-3779d003ab6de980dee5c5d1980bdb033345e57e",
+            "ja-mof-1e45d73d4aefd473f51cc8bb96061a16984b96c0",
+            "ca-sema-60e89a4901773522fb01725b0d3302f2e6dba62c"
+          ],
+          "target": true,
+          "first_seen": "2022-04-27T18:12:14",
+          "last_seen": "2026-09-27T18:53:01",
+          "last_change": "2026-09-27T13:54:12",
+          "score": 1.0,
+          "explanations": {
+            "name_match": {
+              "detail": "['vladimir putin' literalMatch: 1.00, weight 1.00]",
+              "score": 1.0,
+              "query": "Vladimir Putin",
+              "candidate": "\u054e\u056c\u0561\u0564\u056b\u0574\u056b\u0580 \u054a\u0578\u0582\u057f\u056b\u0576"
+            },
+            "vessel_imo_mmsi_match": {
+              "detail": "Not a vessel",
+              "score": 0.0,
+              "query": null,
+              "candidate": null
+            },
+            "dob_year_disjoint": {
+              "detail": "No birth years provided",
+              "score": 0.0,
+              "query": null,
+              "candidate": null
+            },
+            "dob_day_disjoint": {
+              "detail": "No birth dates provided",
+              "score": 0.0,
+              "query": null,
+              "candidate": null
+            }
+          },
+          "match": true
+        }
+      ],
+      "total": {
+        "value": 1,
+        "relation": "eq"
+      },
+      "query": {
+        "id": null,
+        "schema": "Person",
+        "properties": {
+          "name": [
+            "Vladimir Putin"
+          ]
+        }
+      }
+    }
+  },
+  "limit": 5
+}
